@@ -158,6 +158,22 @@ def validate_one_event(event: philsa.FloodEvent, dry_run: bool = False) -> dict:
         "n_patches": len(patches),
     }
 
+    # A grid that yields zero patches is a hard failure for the thesis dataset:
+    # the event produced no training samples (pollutes the dataset if recorded
+    # as "valid"). Unlike main.py's raise (which aborts the whole run),
+    # validation must record it as a failed event and keep going.
+    if not patches:
+        report["failures"].append("zero_patches")
+        report["warnings"].append(
+            "No patches generated within flood extent bounds"
+        )
+        report["status"] = "failed"
+        report["checks"]["minimum_patches"] = {
+            "required": config.MIN_PATCHES_PER_EVENT,
+            "selected": 0,
+        }
+        return report
+
     stats = patching.compute_patch_stats(full_stack, mask, patches, epsg)
     selected = patching.filter_and_stratify(patches, stats)
 

@@ -161,8 +161,12 @@ MIN_VALID_PIXEL_PERCENT = 1.0
 # FLOOD_COVERAGE_BUCKETS + MAX_PATCHES_PER_BUCKET_PER_EVENT).
 MIN_FLOOD_PIXEL_PERCENT = 0.0
 # Minimum number of patches a validated event should yield before it is
-# treated as "insufficient coverage" in the failure report. 0 disables.
-MIN_PATCHES_PER_EVENT = 0
+# treated as "insufficient coverage" in the failure report.
+# NOTE (thesis requirement): an event that yields ZERO patches is a failure —
+# it produces no training samples and would pollute the dataset as a "valid"
+# event with no data. Keep this >= 1 so an empty grid marks the event failed.
+# Set to 0 only to deliberately disable the check.
+MIN_PATCHES_PER_EVENT = 1
 
 # Stratified cap: buckets patch flood-coverage fractions (0-1) and caps the
 # number of patches kept per bucket per event, so an event dominated by dry

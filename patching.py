@@ -46,41 +46,95 @@ def generate_patch_grid(
     Patches are generated over the bounding box; patches that don't
     actually intersect `region` are dropped (so we don't waste export
     quota on empty box-corner patches).
+
+    CRS correctness (why this was returning 0 patches):
+    The region's on-the-fly `.transform(proj, ...).bounds().coordinates()` can
+    come back in DEGREES (lon/lat ~121.x/17.x) rather than UTM meters (~300000/
+    1800000). Building `n_cols/n_rows` from those degree values with a meter-scaled
+    patch_size silently collapses the grid to a handful of impossible 2560-"
+    patches, which then fail every `.intersects()` test and yield ZERO patches.
+    To avoid relying on the server's transform round-trip, we compute the UTM
+    meter extent CLIENT-SIDE with pyproj from the WGS84 bounding box, then build
+    each patch rect in real UTM meters with proj=epsg. Intersection pruning is
+    done against the original WGS84 region (EE reprojects as needed).
     """
+    from pyproj import Transformer  # cheap, local import
+
+    # 1. WGS84 bounding box of the region (always well-defined).
     lonlat = region.centroid(maxError=1).coordinates().getInfo()
     lon, lat = lonlat[0], lonlat[1]
     epsg = utm_epsg_for_lonlat(lon, lat)
     proj = ee.Projection(epsg)
 
-    region_proj = region.transform(proj, maxError=1)
-    bounds = region_proj.bounds(maxError=1).coordinates().get(0).getInfo()
-    xs = [pt[0] for pt in bounds]
-    ys = [pt[1] for pt in bounds]
-    xmin, xmax = min(xs), max(xs)
-    ymin, ymax = min(ys), max(ys)
+    wgs_bounds = region.bounds(maxError=1).coordinates().get(0).getInfo()
+    if not wgs_bounds:
+        raise RuntimeError(f"Could not read WGS84 bounding box for region in {epsg}.")
+    lons = [pt[0] for pt in wgs_bounds]
+    lats = [pt[1] for pt in wgs_bounds]
+    lon_min, lon_max = min(lons), max(lons)
+    lat_min, lat_max = min(lats), max(lats)
 
-    n_cols = math.ceil((xmax - xmin) / patch_size_m)
-    n_rows = math.ceil((ymax - ymin) / patch_size_m)
+    # 2. Project the corner to UTM meters client-side (pyproj).
+    t = Transformer.from_crs("EPSG:4326", epsg, always_xy=True)
+    x_min, y_min = t.transform(lon_min, lat_min)
+    x_max, y_max = t.transform(lon_max, lat_max)
 
-    patches = []
+    if not (math.isfinite(x_min) and math.isfinite(y_min)
+            and math.isfinite(x_max) and math.isfinite(y_max)):
+        raise RuntimeError(f"pyproj projected region to non-finite UTM coords in {epsg}.")
+
+    # 3. Meter grid over the projected extent.
+    n_cols = math.ceil((x_max - x_min) / patch_size_m)
+    n_rows = math.ceil((y_max - y_min) / patch_size_m)
+    if n_cols < 1 or n_rows < 1:
+        raise RuntimeError(
+            f"Projected region extent is too small for patch_size={patch_size_m} m "
+            f"({x_max - x_min:.1f} x {y_max - y_min:.1f} m) in {epsg}."
+        )
+
+    # 3b. Build every rect (in UTM meters, proj=epsg) in a client-side list.
+    all_patches: list[dict] = []
     for row in range(n_rows):
         for col in range(n_cols):
-            x0 = xmin + col * patch_size_m
-            y0 = ymin + row * patch_size_m
+            x0 = x_min + col * patch_size_m
+            y0 = y_min + row * patch_size_m
             rect = ee.Geometry.Rectangle(
                 [x0, y0, x0 + patch_size_m, y0 + patch_size_m],
                 proj=proj,
                 geodesic=False,
             )
-            patches.append({"row": row, "col": col, "rect": rect})
+            all_patches.append({"row": row, "col": col, "rect": rect})
 
-    # Keep only patches that actually intersect the (possibly irregular)
-    # region, not just its bounding box.
+    # 4. Keep only patches that actually intersect the (possibly irregular)
+    #    region, not just its bounding box. The rects are UTM-meters; EE
+    #    reprojects against the WGS84 region automatically.
+    #
+    #    Done as a single server-side `map` that flags each rect with an
+    #    intersect boolean, fetched once, then filtered client-side. This
+    #    avoids a per-patch .intersects().getInfo() loop — a ~1200-patch grid
+    #    would otherwise be ~1200 synchronous round trips.
+    fc = ee.FeatureCollection([
+        ee.Feature(p["rect"], {"row": p["row"], "col": p["col"]})
+        for p in all_patches
+    ])
+    flagged = fc.map(
+        lambda f: f.set("in_region", f.geometry().intersects(region, maxError=1))
+    )
+
     intersecting = []
-    for p in patches:
-        does_intersect = p["rect"].intersects(region_proj, maxError=1).getInfo()
-        if does_intersect:
-            intersecting.append(p)
+    for feat in flagged.getInfo().get("features", []):
+        pr = feat.get("properties", {})
+        if not pr.get("in_region"):
+            continue
+        r, c = int(pr["row"]), int(pr["col"])
+        x0 = x_min + c * patch_size_m
+        y0 = y_min + r * patch_size_m
+        rect = ee.Geometry.Rectangle(
+            [x0, y0, x0 + patch_size_m, y0 + patch_size_m],
+            proj=proj,
+            geodesic=False,
+        )
+        intersecting.append({"row": r, "col": c, "rect": rect})
 
     return {"epsg": epsg, "patches": intersecting}
 
@@ -223,8 +277,17 @@ def export_patch(
 
     The GeoTIFF is written in the local UTM CRS at TARGET_RESOLUTION_M, so
     its geotransform is exactly the 10 m lattice used by the SAR stack.
+
+    All bands are cast to a common float32 before adding the label band:
+    EE rejects an export whose bands have mixed dtypes (e.g. floating SAR/
+    MERIT + a byte() flood mask) with "Exported bands must have compatible
+    data types". Casting everything to float32 makes the multi-band GeoTIFF
+    writable and matches how training loaders read float inputs; the binary
+    label is preserved as 0.0/1.0.
     """
-    combined = stack.select(config.OUTPUT_BANDS).addBands(mask.rename(config.LABEL_BAND))
+    float_stack = stack.select(config.OUTPUT_BANDS).toFloat()
+    label = mask.rename(config.LABEL_BAND).toFloat()
+    combined = float_stack.addBands(label)
     patch_id = f"{event_id}_r{patch['row']:03d}_c{patch['col']:03d}"
 
     export_kwargs = dict(

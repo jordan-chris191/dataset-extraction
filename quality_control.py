@@ -34,6 +34,7 @@ FAILURE_CATEGORIES = [
     "rasterization_failed",
     "insufficient_valid_pixels",
     "insufficient_coverage",
+    "zero_patches",
     "quality_control_failed",
 ]
 

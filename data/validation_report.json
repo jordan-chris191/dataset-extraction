@@ -54,17 +54,1688 @@
         },
         "patch_grid": {
           "epsg": "EPSG:32651",
-          "n_patches": 0
+          "n_patches": 666
         },
         "minimum_patches": {
-          "required": 0,
-          "selected": 0
+          "required": 1,
+          "selected": 112
         }
       },
       "failures": [],
       "warnings": [],
-      "selected_patches": [],
-      "preview_patches": [],
+      "selected_patches": [
+        {
+          "patch_id": "cagayan_2024-10-27_r007_c019",
+          "row": 7,
+          "col": 19,
+          "flood_pixel_percentage": 0.5,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r025_c008",
+          "row": 25,
+          "col": 8,
+          "flood_pixel_percentage": 0.5,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r001_c016",
+          "row": 1,
+          "col": 16,
+          "flood_pixel_percentage": 0.51,
+          "valid_pixel_percentage": 98.96
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r029_c011",
+          "row": 29,
+          "col": 11,
+          "flood_pixel_percentage": 0.51,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r038_c004",
+          "row": 38,
+          "col": 4,
+          "flood_pixel_percentage": 0.52,
+          "valid_pixel_percentage": 99.7
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r001_c008",
+          "row": 1,
+          "col": 8,
+          "flood_pixel_percentage": 0.53,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r003_c022",
+          "row": 3,
+          "col": 22,
+          "flood_pixel_percentage": 0.47,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r041_c011",
+          "row": 41,
+          "col": 11,
+          "flood_pixel_percentage": 0.54,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r003_c014",
+          "row": 3,
+          "col": 14,
+          "flood_pixel_percentage": 0.55,
+          "valid_pixel_percentage": 99.24
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r035_c002",
+          "row": 35,
+          "col": 2,
+          "flood_pixel_percentage": 0.56,
+          "valid_pixel_percentage": 98.83
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r030_c006",
+          "row": 30,
+          "col": 6,
+          "flood_pixel_percentage": 0.4,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r039_c005",
+          "row": 39,
+          "col": 5,
+          "flood_pixel_percentage": 0.61,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r006_c021",
+          "row": 6,
+          "col": 21,
+          "flood_pixel_percentage": 0.62,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r002_c012",
+          "row": 2,
+          "col": 12,
+          "flood_pixel_percentage": 0.36,
+          "valid_pixel_percentage": 98.83
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r003_c021",
+          "row": 3,
+          "col": 21,
+          "flood_pixel_percentage": 0.64,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r019_c012",
+          "row": 19,
+          "col": 12,
+          "flood_pixel_percentage": 0.65,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r013_c011",
+          "row": 13,
+          "col": 11,
+          "flood_pixel_percentage": 0.34,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r022_c013",
+          "row": 22,
+          "col": 13,
+          "flood_pixel_percentage": 0.34,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r026_c008",
+          "row": 26,
+          "col": 8,
+          "flood_pixel_percentage": 0.34,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r029_c013",
+          "row": 29,
+          "col": 13,
+          "flood_pixel_percentage": 0.34,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r042_c012",
+          "row": 42,
+          "col": 12,
+          "flood_pixel_percentage": 0.66,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r041_c005",
+          "row": 41,
+          "col": 5,
+          "flood_pixel_percentage": 0.67,
+          "valid_pixel_percentage": 99.98
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r038_c001",
+          "row": 38,
+          "col": 1,
+          "flood_pixel_percentage": 0.32,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r036_c008",
+          "row": 36,
+          "col": 8,
+          "flood_pixel_percentage": 0.3,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r043_c008",
+          "row": 43,
+          "col": 8,
+          "flood_pixel_percentage": 0.3,
+          "valid_pixel_percentage": 98.25
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r004_c015",
+          "row": 4,
+          "col": 15,
+          "flood_pixel_percentage": 0.71,
+          "valid_pixel_percentage": 99.78
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r018_c014",
+          "row": 18,
+          "col": 14,
+          "flood_pixel_percentage": 0.72,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r033_c008",
+          "row": 33,
+          "col": 8,
+          "flood_pixel_percentage": 0.72,
+          "valid_pixel_percentage": 99.76
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r029_c012",
+          "row": 29,
+          "col": 12,
+          "flood_pixel_percentage": 0.26,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r001_c009",
+          "row": 1,
+          "col": 9,
+          "flood_pixel_percentage": 0.25,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r001_c010",
+          "row": 1,
+          "col": 10,
+          "flood_pixel_percentage": 0.24,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r021_c014",
+          "row": 21,
+          "col": 14,
+          "flood_pixel_percentage": 0.23,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r039_c003",
+          "row": 39,
+          "col": 3,
+          "flood_pixel_percentage": 0.77,
+          "valid_pixel_percentage": 99.53
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r002_c021",
+          "row": 2,
+          "col": 21,
+          "flood_pixel_percentage": 0.22,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r010_c017",
+          "row": 10,
+          "col": 17,
+          "flood_pixel_percentage": 0.22,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r030_c012",
+          "row": 30,
+          "col": 12,
+          "flood_pixel_percentage": 0.22,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r042_c008",
+          "row": 42,
+          "col": 8,
+          "flood_pixel_percentage": 0.21,
+          "valid_pixel_percentage": 98.59
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r045_c007",
+          "row": 45,
+          "col": 7,
+          "flood_pixel_percentage": 0.79,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r017_c010",
+          "row": 17,
+          "col": 10,
+          "flood_pixel_percentage": 0.2,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r044_c008",
+          "row": 44,
+          "col": 8,
+          "flood_pixel_percentage": 0.2,
+          "valid_pixel_percentage": 99.38
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r034_c012",
+          "row": 34,
+          "col": 12,
+          "flood_pixel_percentage": 5.45,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r033_c009",
+          "row": 33,
+          "col": 9,
+          "flood_pixel_percentage": 5.65,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r020_c012",
+          "row": 20,
+          "col": 12,
+          "flood_pixel_percentage": 5.34,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r026_c011",
+          "row": 26,
+          "col": 11,
+          "flood_pixel_percentage": 5.31,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r032_c012",
+          "row": 32,
+          "col": 12,
+          "flood_pixel_percentage": 5.89,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r027_c012",
+          "row": 27,
+          "col": 12,
+          "flood_pixel_percentage": 5.95,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r028_c012",
+          "row": 28,
+          "col": 12,
+          "flood_pixel_percentage": 4.87,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r017_c013",
+          "row": 17,
+          "col": 13,
+          "flood_pixel_percentage": 6.27,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r015_c014",
+          "row": 15,
+          "col": 14,
+          "flood_pixel_percentage": 6.41,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r026_c012",
+          "row": 26,
+          "col": 12,
+          "flood_pixel_percentage": 6.43,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r035_c011",
+          "row": 35,
+          "col": 11,
+          "flood_pixel_percentage": 4.44,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r031_c011",
+          "row": 31,
+          "col": 11,
+          "flood_pixel_percentage": 6.64,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r017_c015",
+          "row": 17,
+          "col": 15,
+          "flood_pixel_percentage": 4.22,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r020_c013",
+          "row": 20,
+          "col": 13,
+          "flood_pixel_percentage": 3.96,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r016_c014",
+          "row": 16,
+          "col": 14,
+          "flood_pixel_percentage": 3.68,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r008_c018",
+          "row": 8,
+          "col": 18,
+          "flood_pixel_percentage": 7.49,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r033_c012",
+          "row": 33,
+          "col": 12,
+          "flood_pixel_percentage": 3.45,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r013_c015",
+          "row": 13,
+          "col": 15,
+          "flood_pixel_percentage": 3.4,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r037_c012",
+          "row": 37,
+          "col": 12,
+          "flood_pixel_percentage": 3.35,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r023_c014",
+          "row": 23,
+          "col": 14,
+          "flood_pixel_percentage": 7.71,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r041_c008",
+          "row": 41,
+          "col": 8,
+          "flood_pixel_percentage": 7.76,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r042_c006",
+          "row": 42,
+          "col": 6,
+          "flood_pixel_percentage": 3.05,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r021_c012",
+          "row": 21,
+          "col": 12,
+          "flood_pixel_percentage": 7.97,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r030_c010",
+          "row": 30,
+          "col": 10,
+          "flood_pixel_percentage": 8.03,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r011_c016",
+          "row": 11,
+          "col": 16,
+          "flood_pixel_percentage": 2.94,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r019_c013",
+          "row": 19,
+          "col": 13,
+          "flood_pixel_percentage": 2.81,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r026_c013",
+          "row": 26,
+          "col": 13,
+          "flood_pixel_percentage": 2.81,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r030_c011",
+          "row": 30,
+          "col": 11,
+          "flood_pixel_percentage": 2.81,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r028_c013",
+          "row": 28,
+          "col": 13,
+          "flood_pixel_percentage": 2.74,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r009_c018",
+          "row": 9,
+          "col": 18,
+          "flood_pixel_percentage": 2.59,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r027_c011",
+          "row": 27,
+          "col": 11,
+          "flood_pixel_percentage": 2.49,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r010_c016",
+          "row": 10,
+          "col": 16,
+          "flood_pixel_percentage": 2.39,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r037_c008",
+          "row": 37,
+          "col": 8,
+          "flood_pixel_percentage": 2.27,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r006_c016",
+          "row": 6,
+          "col": 16,
+          "flood_pixel_percentage": 2.14,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r019_c014",
+          "row": 19,
+          "col": 14,
+          "flood_pixel_percentage": 2.12,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r038_c007",
+          "row": 38,
+          "col": 7,
+          "flood_pixel_percentage": 2.08,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r022_c014",
+          "row": 22,
+          "col": 14,
+          "flood_pixel_percentage": 2.05,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r013_c016",
+          "row": 13,
+          "col": 16,
+          "flood_pixel_percentage": 2.0,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r024_c014",
+          "row": 24,
+          "col": 14,
+          "flood_pixel_percentage": 1.96,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r004_c016",
+          "row": 4,
+          "col": 16,
+          "flood_pixel_percentage": 1.88,
+          "valid_pixel_percentage": 99.94
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r038_c009",
+          "row": 38,
+          "col": 9,
+          "flood_pixel_percentage": 19.69,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r037_c007",
+          "row": 37,
+          "col": 7,
+          "flood_pixel_percentage": 19.63,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r032_c009",
+          "row": 32,
+          "col": 9,
+          "flood_pixel_percentage": 19.48,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r033_c011",
+          "row": 33,
+          "col": 11,
+          "flood_pixel_percentage": 21.16,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r036_c007",
+          "row": 36,
+          "col": 7,
+          "flood_pixel_percentage": 17.96,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r032_c010",
+          "row": 32,
+          "col": 10,
+          "flood_pixel_percentage": 17.05,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r039_c008",
+          "row": 39,
+          "col": 8,
+          "flood_pixel_percentage": 23.35,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r038_c008",
+          "row": 38,
+          "col": 8,
+          "flood_pixel_percentage": 23.36,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r034_c011",
+          "row": 34,
+          "col": 11,
+          "flood_pixel_percentage": 23.72,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r038_c010",
+          "row": 38,
+          "col": 10,
+          "flood_pixel_percentage": 15.97,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r038_c011",
+          "row": 38,
+          "col": 11,
+          "flood_pixel_percentage": 15.4,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r033_c010",
+          "row": 33,
+          "col": 10,
+          "flood_pixel_percentage": 24.77,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r035_c010",
+          "row": 35,
+          "col": 10,
+          "flood_pixel_percentage": 14.35,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r031_c012",
+          "row": 31,
+          "col": 12,
+          "flood_pixel_percentage": 26.23,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r041_c010",
+          "row": 41,
+          "col": 10,
+          "flood_pixel_percentage": 13.58,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r040_c008",
+          "row": 40,
+          "col": 8,
+          "flood_pixel_percentage": 12.95,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r018_c015",
+          "row": 18,
+          "col": 15,
+          "flood_pixel_percentage": 12.6,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r034_c009",
+          "row": 34,
+          "col": 9,
+          "flood_pixel_percentage": 12.25,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r031_c009",
+          "row": 31,
+          "col": 9,
+          "flood_pixel_percentage": 11.63,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r027_c010",
+          "row": 27,
+          "col": 10,
+          "flood_pixel_percentage": 10.88,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r039_c011",
+          "row": 39,
+          "col": 11,
+          "flood_pixel_percentage": 29.19,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r039_c010",
+          "row": 39,
+          "col": 10,
+          "flood_pixel_percentage": 10.65,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r040_c010",
+          "row": 40,
+          "col": 10,
+          "flood_pixel_percentage": 10.37,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r036_c009",
+          "row": 36,
+          "col": 9,
+          "flood_pixel_percentage": 36.88,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r041_c009",
+          "row": 41,
+          "col": 9,
+          "flood_pixel_percentage": 36.67,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r035_c009",
+          "row": 35,
+          "col": 9,
+          "flood_pixel_percentage": 36.65,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r036_c010",
+          "row": 36,
+          "col": 10,
+          "flood_pixel_percentage": 35.37,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r040_c009",
+          "row": 40,
+          "col": 9,
+          "flood_pixel_percentage": 33.94,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r034_c010",
+          "row": 34,
+          "col": 10,
+          "flood_pixel_percentage": 33.83,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r037_c010",
+          "row": 37,
+          "col": 10,
+          "flood_pixel_percentage": 33.77,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r036_c011",
+          "row": 36,
+          "col": 11,
+          "flood_pixel_percentage": 31.25,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r037_c011",
+          "row": 37,
+          "col": 11,
+          "flood_pixel_percentage": 30.33,
+          "valid_pixel_percentage": 100.0
+        }
+      ],
+      "preview_patches": [
+        {
+          "patch_id": "cagayan_2024-10-27_r007_c019",
+          "task_id": "FJSKVVDNIPZ6RSFOB7VW5HPS"
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r025_c008",
+          "task_id": "AGZIGVN6QMWX25UU45G667E7"
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r001_c016",
+          "task_id": "K6LHESSFEB7D4ZROFBT532HP"
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r029_c011",
+          "task_id": "V3NYBMHNQIWBYSGQFXIMBEOK"
+        }
+      ],
+      "status": "valid"
+    },
+    {
+      "event_id": "cagayan_2024-10-27",
+      "basin": "cagayan",
+      "flood_date": "2024-10-27",
+      "checks": {
+        "prerequisites": {
+          "ok": true,
+          "problems": [],
+          "report": {
+            "path": "data/philsa_shapefiles/cagayan_2024-10-27.shp",
+            "n_features": 1757,
+            "columns": [
+              "fid",
+              "DN",
+              "geometry"
+            ],
+            "geometry_type": [
+              "Polygon"
+            ],
+            "crs": "EPSG:4326",
+            "bounds": [
+              121.46120956580052,
+              16.95767728138103,
+              122.05059422371133,
+              18.01813847428413
+            ]
+          }
+        },
+        "s1": {
+          "ok": true,
+          "pre_s1_date": "2024-10-14",
+          "post_s1_date": "2024-11-07",
+          "vv_vh_available": true,
+          "orbit_pass": "DESCENDING",
+          "pre_relative_orbit": 32,
+          "post_relative_orbit": 32,
+          "pre_selection_reason": "Latest valid S1 IW VV+VH scene strictly before flood_date 2024-10-27 (min 1 day gap), within 24-day pre window (2024-10-03 .. 2024-10-26), pass=DESCENDING.",
+          "post_selection_reason": "Earliest valid S1 IW VV+VH scene at-or-after flood_date 2024-10-27, within 14-day post window (2024-10-27 .. 2024-11-10)."
+        },
+        "merit_hydro": {
+          "ok": true,
+          "detail": "hand, elevation, flow_acc"
+        },
+        "alignment": {
+          "target_resolution_m": 10,
+          "working_crs": "EPSG:32651",
+          "sar_projection": "unknown",
+          "hydro_projection": "EPSG:4326",
+          "mask_projection": "EPSG:4326",
+          "projections_consistent": false,
+          "note": "Bands are written as one stacked image for export at crs=EPSG:32651 and scale=10 m; grids coincide by construction."
+        },
+        "patch_grid": {
+          "epsg": "EPSG:32651",
+          "n_patches": 666
+        },
+        "minimum_patches": {
+          "required": 1,
+          "selected": 112
+        }
+      },
+      "failures": [],
+      "warnings": [],
+      "selected_patches": [
+        {
+          "patch_id": "cagayan_2024-10-27_r007_c019",
+          "row": 7,
+          "col": 19,
+          "flood_pixel_percentage": 0.5,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r025_c008",
+          "row": 25,
+          "col": 8,
+          "flood_pixel_percentage": 0.5,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r001_c016",
+          "row": 1,
+          "col": 16,
+          "flood_pixel_percentage": 0.51,
+          "valid_pixel_percentage": 98.96
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r029_c011",
+          "row": 29,
+          "col": 11,
+          "flood_pixel_percentage": 0.51,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r038_c004",
+          "row": 38,
+          "col": 4,
+          "flood_pixel_percentage": 0.52,
+          "valid_pixel_percentage": 99.7
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r001_c008",
+          "row": 1,
+          "col": 8,
+          "flood_pixel_percentage": 0.53,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r003_c022",
+          "row": 3,
+          "col": 22,
+          "flood_pixel_percentage": 0.47,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r041_c011",
+          "row": 41,
+          "col": 11,
+          "flood_pixel_percentage": 0.54,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r003_c014",
+          "row": 3,
+          "col": 14,
+          "flood_pixel_percentage": 0.55,
+          "valid_pixel_percentage": 99.24
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r035_c002",
+          "row": 35,
+          "col": 2,
+          "flood_pixel_percentage": 0.56,
+          "valid_pixel_percentage": 98.83
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r030_c006",
+          "row": 30,
+          "col": 6,
+          "flood_pixel_percentage": 0.4,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r039_c005",
+          "row": 39,
+          "col": 5,
+          "flood_pixel_percentage": 0.61,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r006_c021",
+          "row": 6,
+          "col": 21,
+          "flood_pixel_percentage": 0.62,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r002_c012",
+          "row": 2,
+          "col": 12,
+          "flood_pixel_percentage": 0.36,
+          "valid_pixel_percentage": 98.83
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r003_c021",
+          "row": 3,
+          "col": 21,
+          "flood_pixel_percentage": 0.64,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r019_c012",
+          "row": 19,
+          "col": 12,
+          "flood_pixel_percentage": 0.65,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r013_c011",
+          "row": 13,
+          "col": 11,
+          "flood_pixel_percentage": 0.34,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r022_c013",
+          "row": 22,
+          "col": 13,
+          "flood_pixel_percentage": 0.34,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r026_c008",
+          "row": 26,
+          "col": 8,
+          "flood_pixel_percentage": 0.34,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r029_c013",
+          "row": 29,
+          "col": 13,
+          "flood_pixel_percentage": 0.34,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r042_c012",
+          "row": 42,
+          "col": 12,
+          "flood_pixel_percentage": 0.66,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r041_c005",
+          "row": 41,
+          "col": 5,
+          "flood_pixel_percentage": 0.67,
+          "valid_pixel_percentage": 99.98
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r038_c001",
+          "row": 38,
+          "col": 1,
+          "flood_pixel_percentage": 0.32,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r036_c008",
+          "row": 36,
+          "col": 8,
+          "flood_pixel_percentage": 0.3,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r043_c008",
+          "row": 43,
+          "col": 8,
+          "flood_pixel_percentage": 0.3,
+          "valid_pixel_percentage": 98.25
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r004_c015",
+          "row": 4,
+          "col": 15,
+          "flood_pixel_percentage": 0.71,
+          "valid_pixel_percentage": 99.78
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r018_c014",
+          "row": 18,
+          "col": 14,
+          "flood_pixel_percentage": 0.72,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r033_c008",
+          "row": 33,
+          "col": 8,
+          "flood_pixel_percentage": 0.72,
+          "valid_pixel_percentage": 99.76
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r029_c012",
+          "row": 29,
+          "col": 12,
+          "flood_pixel_percentage": 0.26,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r001_c009",
+          "row": 1,
+          "col": 9,
+          "flood_pixel_percentage": 0.25,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r001_c010",
+          "row": 1,
+          "col": 10,
+          "flood_pixel_percentage": 0.24,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r021_c014",
+          "row": 21,
+          "col": 14,
+          "flood_pixel_percentage": 0.23,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r039_c003",
+          "row": 39,
+          "col": 3,
+          "flood_pixel_percentage": 0.77,
+          "valid_pixel_percentage": 99.53
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r002_c021",
+          "row": 2,
+          "col": 21,
+          "flood_pixel_percentage": 0.22,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r010_c017",
+          "row": 10,
+          "col": 17,
+          "flood_pixel_percentage": 0.22,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r030_c012",
+          "row": 30,
+          "col": 12,
+          "flood_pixel_percentage": 0.22,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r042_c008",
+          "row": 42,
+          "col": 8,
+          "flood_pixel_percentage": 0.21,
+          "valid_pixel_percentage": 98.59
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r045_c007",
+          "row": 45,
+          "col": 7,
+          "flood_pixel_percentage": 0.79,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r017_c010",
+          "row": 17,
+          "col": 10,
+          "flood_pixel_percentage": 0.2,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r044_c008",
+          "row": 44,
+          "col": 8,
+          "flood_pixel_percentage": 0.2,
+          "valid_pixel_percentage": 99.38
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r034_c012",
+          "row": 34,
+          "col": 12,
+          "flood_pixel_percentage": 5.45,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r033_c009",
+          "row": 33,
+          "col": 9,
+          "flood_pixel_percentage": 5.65,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r020_c012",
+          "row": 20,
+          "col": 12,
+          "flood_pixel_percentage": 5.34,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r026_c011",
+          "row": 26,
+          "col": 11,
+          "flood_pixel_percentage": 5.31,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r032_c012",
+          "row": 32,
+          "col": 12,
+          "flood_pixel_percentage": 5.89,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r027_c012",
+          "row": 27,
+          "col": 12,
+          "flood_pixel_percentage": 5.95,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r028_c012",
+          "row": 28,
+          "col": 12,
+          "flood_pixel_percentage": 4.87,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r017_c013",
+          "row": 17,
+          "col": 13,
+          "flood_pixel_percentage": 6.27,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r015_c014",
+          "row": 15,
+          "col": 14,
+          "flood_pixel_percentage": 6.41,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r026_c012",
+          "row": 26,
+          "col": 12,
+          "flood_pixel_percentage": 6.43,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r035_c011",
+          "row": 35,
+          "col": 11,
+          "flood_pixel_percentage": 4.44,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r031_c011",
+          "row": 31,
+          "col": 11,
+          "flood_pixel_percentage": 6.64,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r017_c015",
+          "row": 17,
+          "col": 15,
+          "flood_pixel_percentage": 4.22,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r020_c013",
+          "row": 20,
+          "col": 13,
+          "flood_pixel_percentage": 3.96,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r016_c014",
+          "row": 16,
+          "col": 14,
+          "flood_pixel_percentage": 3.68,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r008_c018",
+          "row": 8,
+          "col": 18,
+          "flood_pixel_percentage": 7.49,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r033_c012",
+          "row": 33,
+          "col": 12,
+          "flood_pixel_percentage": 3.45,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r013_c015",
+          "row": 13,
+          "col": 15,
+          "flood_pixel_percentage": 3.4,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r037_c012",
+          "row": 37,
+          "col": 12,
+          "flood_pixel_percentage": 3.35,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r023_c014",
+          "row": 23,
+          "col": 14,
+          "flood_pixel_percentage": 7.71,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r041_c008",
+          "row": 41,
+          "col": 8,
+          "flood_pixel_percentage": 7.76,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r042_c006",
+          "row": 42,
+          "col": 6,
+          "flood_pixel_percentage": 3.05,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r021_c012",
+          "row": 21,
+          "col": 12,
+          "flood_pixel_percentage": 7.97,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r030_c010",
+          "row": 30,
+          "col": 10,
+          "flood_pixel_percentage": 8.03,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r011_c016",
+          "row": 11,
+          "col": 16,
+          "flood_pixel_percentage": 2.94,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r019_c013",
+          "row": 19,
+          "col": 13,
+          "flood_pixel_percentage": 2.81,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r026_c013",
+          "row": 26,
+          "col": 13,
+          "flood_pixel_percentage": 2.81,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r030_c011",
+          "row": 30,
+          "col": 11,
+          "flood_pixel_percentage": 2.81,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r028_c013",
+          "row": 28,
+          "col": 13,
+          "flood_pixel_percentage": 2.74,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r009_c018",
+          "row": 9,
+          "col": 18,
+          "flood_pixel_percentage": 2.59,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r027_c011",
+          "row": 27,
+          "col": 11,
+          "flood_pixel_percentage": 2.49,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r010_c016",
+          "row": 10,
+          "col": 16,
+          "flood_pixel_percentage": 2.39,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r037_c008",
+          "row": 37,
+          "col": 8,
+          "flood_pixel_percentage": 2.27,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r006_c016",
+          "row": 6,
+          "col": 16,
+          "flood_pixel_percentage": 2.14,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r019_c014",
+          "row": 19,
+          "col": 14,
+          "flood_pixel_percentage": 2.12,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r038_c007",
+          "row": 38,
+          "col": 7,
+          "flood_pixel_percentage": 2.08,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r022_c014",
+          "row": 22,
+          "col": 14,
+          "flood_pixel_percentage": 2.05,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r013_c016",
+          "row": 13,
+          "col": 16,
+          "flood_pixel_percentage": 2.0,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r024_c014",
+          "row": 24,
+          "col": 14,
+          "flood_pixel_percentage": 1.96,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r004_c016",
+          "row": 4,
+          "col": 16,
+          "flood_pixel_percentage": 1.88,
+          "valid_pixel_percentage": 99.94
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r038_c009",
+          "row": 38,
+          "col": 9,
+          "flood_pixel_percentage": 19.69,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r037_c007",
+          "row": 37,
+          "col": 7,
+          "flood_pixel_percentage": 19.63,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r032_c009",
+          "row": 32,
+          "col": 9,
+          "flood_pixel_percentage": 19.48,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r033_c011",
+          "row": 33,
+          "col": 11,
+          "flood_pixel_percentage": 21.16,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r036_c007",
+          "row": 36,
+          "col": 7,
+          "flood_pixel_percentage": 17.96,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r032_c010",
+          "row": 32,
+          "col": 10,
+          "flood_pixel_percentage": 17.05,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r039_c008",
+          "row": 39,
+          "col": 8,
+          "flood_pixel_percentage": 23.35,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r038_c008",
+          "row": 38,
+          "col": 8,
+          "flood_pixel_percentage": 23.36,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r034_c011",
+          "row": 34,
+          "col": 11,
+          "flood_pixel_percentage": 23.72,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r038_c010",
+          "row": 38,
+          "col": 10,
+          "flood_pixel_percentage": 15.97,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r038_c011",
+          "row": 38,
+          "col": 11,
+          "flood_pixel_percentage": 15.4,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r033_c010",
+          "row": 33,
+          "col": 10,
+          "flood_pixel_percentage": 24.77,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r035_c010",
+          "row": 35,
+          "col": 10,
+          "flood_pixel_percentage": 14.35,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r031_c012",
+          "row": 31,
+          "col": 12,
+          "flood_pixel_percentage": 26.23,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r041_c010",
+          "row": 41,
+          "col": 10,
+          "flood_pixel_percentage": 13.58,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r040_c008",
+          "row": 40,
+          "col": 8,
+          "flood_pixel_percentage": 12.95,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r018_c015",
+          "row": 18,
+          "col": 15,
+          "flood_pixel_percentage": 12.6,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r034_c009",
+          "row": 34,
+          "col": 9,
+          "flood_pixel_percentage": 12.25,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r031_c009",
+          "row": 31,
+          "col": 9,
+          "flood_pixel_percentage": 11.63,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r027_c010",
+          "row": 27,
+          "col": 10,
+          "flood_pixel_percentage": 10.88,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r039_c011",
+          "row": 39,
+          "col": 11,
+          "flood_pixel_percentage": 29.19,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r039_c010",
+          "row": 39,
+          "col": 10,
+          "flood_pixel_percentage": 10.65,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r040_c010",
+          "row": 40,
+          "col": 10,
+          "flood_pixel_percentage": 10.37,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r036_c009",
+          "row": 36,
+          "col": 9,
+          "flood_pixel_percentage": 36.88,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r041_c009",
+          "row": 41,
+          "col": 9,
+          "flood_pixel_percentage": 36.67,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r035_c009",
+          "row": 35,
+          "col": 9,
+          "flood_pixel_percentage": 36.65,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r036_c010",
+          "row": 36,
+          "col": 10,
+          "flood_pixel_percentage": 35.37,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r040_c009",
+          "row": 40,
+          "col": 9,
+          "flood_pixel_percentage": 33.94,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r034_c010",
+          "row": 34,
+          "col": 10,
+          "flood_pixel_percentage": 33.83,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r037_c010",
+          "row": 37,
+          "col": 10,
+          "flood_pixel_percentage": 33.77,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r036_c011",
+          "row": 36,
+          "col": 11,
+          "flood_pixel_percentage": 31.25,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r037_c011",
+          "row": 37,
+          "col": 11,
+          "flood_pixel_percentage": 30.33,
+          "valid_pixel_percentage": 100.0
+        }
+      ],
+      "preview_patches": [
+        {
+          "patch_id": "cagayan_2024-10-27_r007_c019",
+          "task_id": "JLLMHV3H3QFWVNNGM4YSPM6W"
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r025_c008",
+          "task_id": "O3LKLWG7ODIKMALSKZRVTQG3"
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r001_c016",
+          "task_id": "VGIYOO2X2KOOGZS472L43AX3"
+        },
+        {
+          "patch_id": "cagayan_2024-10-27_r029_c011",
+          "task_id": "VJMQINLPEPKZC5SSMCV3U7RW"
+        }
+      ],
       "status": "valid"
     }
   ]
