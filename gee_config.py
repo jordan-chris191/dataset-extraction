@@ -41,7 +41,9 @@ EE_PROJECT: Optional[str] = "flood-thesis-507015"
 #
 #   Key  = short basin label used in the events CSV (must match `basin`).
 BASINS = {
-    "cagayan": {"local_path": "data/basins/cagayan_bbox.geojson"},
+    "cagayan":  {"local_path": "data/basins/cagayan_bbox.geojson"},
+    "pampanga": {"local_path": "data/basins/pampanga.geojson"},
+    "agusan":   {"local_path": "data/basins/agusan.geojson"},
 }
 
 # ---------------------------------------------------------------------------

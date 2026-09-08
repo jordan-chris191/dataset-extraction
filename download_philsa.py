@@ -60,11 +60,17 @@ def search_packages(query: str) -> list[dict]:
 def acquire(
     date_iso: str,
     basin: str,
-    region: str = DEFAULT_REGION,
+    region: str | None = DEFAULT_REGION,
     out_dir: str = "data/philsa_shapefiles",
 ) -> dict:
     """
     Download + stage the PhilSA flood shapefile for one event.
+
+    `region` selects the SHP resource by a region token in the resource name
+    when given (e.g. "cagayan-isabela"). Pass `region=None` for packages whose
+    SHP filename carries NO region token (single unnamed S1 SHP, e.g. the
+    Pampanga/Agusan nationwide packages) — the S1 SHP is then picked directly,
+    and the basin boundary defines the clip, not the resource name.
 
     Returns a structured report dict:
       {ok, download_url, staged_shp, sidecars, report}
@@ -87,17 +93,37 @@ def acquire(
     resources = pkg.get("resources", [])
     shp_resources = [r for r in resources if (r.get("format") or "").upper() == "SHP"]
 
-    # 3. Pick the SHP resource containing the region token
-    region_l = region.lower()
-    matches = [r for r in shp_resources if region_l in r.get("name", "").lower()]
-    if not matches:
-        avail = [r.get("name") for r in shp_resources]
-        raise LookupError(
-            f"No SHP resource for region {region!r} in package {pkg.get('name')}. "
-            f"Available: {avail}"
+    # 3. Pick the SHP resource.
+    if region is None:
+        # No region token available: pick the Sentinel-1 flood SHP directly.
+        # The basin boundary defines the clip, not the resource name.
+        s1 = [r for r in shp_resources if "s1" in r.get("name", "").lower()]
+        if len(shp_resources) == 1:
+            res = shp_resources[0]
+        elif len(s1) == 1:
+            res = s1[0]
+        else:
+            avail = [r.get("name") for r in shp_resources]
+            raise LookupError(
+                f"region=None but package {pkg.get('name')} has multiple SHP "
+                f"resources and no unique S1 one. Available: {avail}"
+            )
+        url = res["url"]
+        region_note = (
+            f"NO region token; using {res.get('name')}; clip defined by basin boundary"
         )
-    res = sorted(matches, key=lambda r: r.get("name", ""), reverse=True)[0]
-    url = res["url"]
+    else:
+        region_l = region.lower()
+        matches = [r for r in shp_resources if region_l in r.get("name", "").lower()]
+        if not matches:
+            avail = [r.get("name") for r in shp_resources]
+            raise LookupError(
+                f"No SHP resource for region {region!r} in package {pkg.get('name')}. "
+                f"Available: {avail}"
+            )
+        res = sorted(matches, key=lambda r: r.get("name", ""), reverse=True)[0]
+        url = res["url"]
+        region_note = ""
 
     # 4. Download + extract
     zip_bytes = _urlopen(url)
@@ -142,6 +168,7 @@ def acquire(
     finally:
         shutil.rmtree(tmpdir, ignore_errors=True)
 
+    note = f" {region_note}" if region_note else ""
     return {
         "ok": True,
         "download_url": url,
@@ -149,7 +176,7 @@ def acquire(
         "sidecars": [v for k, v in final_files.items() if k != "shp"],
         "report": (
             f"Downloaded PhilSA {pkg.get('name')} resource {res.get('name')} "
-            f"({len(final_files)} files) -> {final_files['shp']}"
+            f"({len(final_files)} files) -> {final_files['shp']}{note}"
         ),
     }
 
@@ -159,11 +186,15 @@ def main() -> int:
     ap.add_argument("--date", required=True, help="Flood event date, YYYY-MM-DD (filename-derived).")
     ap.add_argument("--basin", required=True, help="Basin label used as the output basename.")
     ap.add_argument("--region", default=DEFAULT_REGION, help="Region token in the resource name.")
+    ap.add_argument("--no-region", action="store_true",
+                    help="Package SHP has no region token; pick the single S1 SHP "
+                         "(basin boundary defines the clip).")
     ap.add_argument("--out-dir", default="data/philsa_shapefiles")
     args = ap.parse_args()
 
+    region = None if args.no_region else args.region
     try:
-        report = acquire(args.date, args.basin, args.region, args.out_dir)
+        report = acquire(args.date, args.basin, region, args.out_dir)
     except Exception as exc:  # noqa: BLE001 - CLI-facing
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1

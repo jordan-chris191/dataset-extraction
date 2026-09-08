@@ -4,3 +4,7 @@ __pycache__/
 .env
 .env.*
 *.log
+
+# One-time downloaded HydroSHEDS/HydroBASINS binaries (only generated
+# data/basins/*.geojson are committed)
+data/hydrosheds/
