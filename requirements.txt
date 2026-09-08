@@ -1,6 +1,7 @@
 earthengine-api>=0.1.400
 geopandas>=0.14
 shapely>=2.0
-fiona>=1.9
+fiona>=1.9 
 pandas>=2.0
 pyproj>=3.6
+geemap>=0.38.5
