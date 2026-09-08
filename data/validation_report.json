@@ -1,0 +1,153 @@
+{
+  "events": [
+    {
+      "event_id": "cagayan_2024-10-27",
+      "basin": "cagayan",
+      "flood_date": "2024-10-27",
+      "checks": {
+        "prerequisites": {
+          "ok": true,
+          "problems": [],
+          "report": {
+            "path": "data/philsa_shapefiles/cagayan_2024-10-27.shp",
+            "n_features": 1757,
+            "columns": [
+              "fid",
+              "DN",
+              "geometry"
+            ],
+            "geometry_type": [
+              "Polygon"
+            ],
+            "crs": "EPSG:4326",
+            "bounds": [
+              121.46120956580052,
+              16.95767728138103,
+              122.05059422371133,
+              18.01813847428413
+            ]
+          }
+        },
+        "s1": {
+          "ok": false,
+          "detail": "no pre/post S1 scenes"
+        }
+      },
+      "failures": [
+        "missing_pre_s1"
+      ],
+      "warnings": [],
+      "selected_patches": [],
+      "preview_patches": [],
+      "status": "failed"
+    },
+    {
+      "event_id": "cagayan_2024-10-27",
+      "basin": "cagayan",
+      "flood_date": "2024-10-27",
+      "checks": {
+        "prerequisites": {
+          "ok": true,
+          "problems": [],
+          "report": {
+            "path": "data/philsa_shapefiles/cagayan_2024-10-27.shp",
+            "n_features": 1757,
+            "columns": [
+              "fid",
+              "DN",
+              "geometry"
+            ],
+            "geometry_type": [
+              "Polygon"
+            ],
+            "crs": "EPSG:4326",
+            "bounds": [
+              121.46120956580052,
+              16.95767728138103,
+              122.05059422371133,
+              18.01813847428413
+            ]
+          }
+        },
+        "s1": {
+          "ok": false,
+          "detail": "no pre/post S1 scenes"
+        }
+      },
+      "failures": [
+        "missing_pre_s1"
+      ],
+      "warnings": [],
+      "selected_patches": [],
+      "preview_patches": [],
+      "status": "failed"
+    },
+    {
+      "event_id": "cagayan_2024-10-27",
+      "basin": "cagayan",
+      "flood_date": "2024-10-27",
+      "checks": {
+        "prerequisites": {
+          "ok": true,
+          "problems": [],
+          "report": {
+            "path": "data/philsa_shapefiles/cagayan_2024-10-27.shp",
+            "n_features": 1757,
+            "columns": [
+              "fid",
+              "DN",
+              "geometry"
+            ],
+            "geometry_type": [
+              "Polygon"
+            ],
+            "crs": "EPSG:4326",
+            "bounds": [
+              121.46120956580052,
+              16.95767728138103,
+              122.05059422371133,
+              18.01813847428413
+            ]
+          }
+        },
+        "s1": {
+          "ok": true,
+          "pre_s1_date": "2024-10-14",
+          "post_s1_date": "2024-11-07",
+          "vv_vh_available": true,
+          "orbit_pass": "DESCENDING",
+          "pre_relative_orbit": 32,
+          "post_relative_orbit": 32,
+          "pre_selection_reason": "Latest valid S1 IW VV+VH scene strictly before flood_date 2024-10-27 (min 1 day gap), within 24-day pre window (2024-10-03 .. 2024-10-26), pass=DESCENDING.",
+          "post_selection_reason": "Earliest valid S1 IW VV+VH scene at-or-after flood_date 2024-10-27, within 14-day post window (2024-10-27 .. 2024-11-10)."
+        },
+        "merit_hydro": {
+          "ok": true,
+          "detail": "hand, elevation, flow_acc"
+        },
+        "alignment": {
+          "target_resolution_m": 10,
+          "working_crs": "EPSG:32651",
+          "sar_projection": "unknown",
+          "hydro_projection": "EPSG:4326",
+          "mask_projection": "EPSG:4326",
+          "projections_consistent": false,
+          "note": "Bands are written as one stacked image for export at crs=EPSG:32651 and scale=10 m; grids coincide by construction."
+        },
+        "patch_grid": {
+          "epsg": "EPSG:32651",
+          "n_patches": 0
+        },
+        "minimum_patches": {
+          "required": 0,
+          "selected": 0
+        }
+      },
+      "failures": [],
+      "warnings": [],
+      "selected_patches": [],
+      "preview_patches": [],
+      "status": "valid"
+    }
+  ]
+}

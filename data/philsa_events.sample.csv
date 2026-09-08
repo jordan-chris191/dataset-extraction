@@ -1,0 +1,15 @@
+event_id,basin,philsa_shapefile_path,flood_date
+# ---------------------------------------------------------------------
+# TEMPLATE — replace these rows with your real PhilSA flood events.
+#
+# event_id              : unique string, e.g. "pampanga_2024-07-24"
+# basin                 : must match a key in gee_config.BASINS
+# philsa_shapefile_path : local path to the PhilSA flood-extent shapefile
+#                         (.shp with sibling .shx/.dbf/.prj) for this event
+# flood_date            : ISO "YYYY-MM-DD" — PhilSA reference max-flood date
+#
+# Copy this file to data/philsa_events.csv and fill it in.
+# ---------------------------------------------------------------------
+# basin_a_2023-07-28,basin_a,data/philsa_shapefiles/basin_a_2023-07-28.shp,2023-07-28
+# basin_a_2022-10-30,basin_a,data/philsa_shapefiles/basin_a_2022-10-30.shp,2022-10-30
+# basin_b_2023-08-02,basin_b,data/philsa_shapefiles/basin_b_2023-08-02.shp,2023-08-02

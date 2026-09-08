@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "updatedAt": 1788850736624,
+  "nodeCount": 7,
+  "contentFingerprint": "6b92606d_76a1d892_357",
+  "nodes": {
+    "mem-MEMORY-memory-index-0": {
+      "id": "mem-MEMORY-memory-index-0",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1788838092990
+    },
+    "mem-philsa-basins-pipeline-milestone-----0": {
+      "id": "mem-philsa-basins-pipeline-milestone-----0",
+      "category": "philsa-basins-pipeline-milestone",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1788838092991
+    },
+    "insight-1788844252823-akfg": {
+      "id": "insight-1788844252823-akfg",
+      "category": "insights",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1788844252823
+    },
+    "insight-1788844252823-w2kh": {
+      "id": "insight-1788844252823-w2kh",
+      "category": "insights",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1788844252823
+    },
+    "insight-1788844252823-u2bm": {
+      "id": "insight-1788844252823-u2bm",
+      "category": "insights",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1788844252823
+    },
+    "insight-1788844252823-dqd4": {
+      "id": "insight-1788844252823-dqd4",
+      "category": "insights",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1788844252823
+    },
+    "insight-1788844252823-sys6": {
+      "id": "insight-1788844252823-sys6",
+      "category": "insights",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1788844252823
+    }
+  },
+  "edges": [
+    {
+      "sourceId": "insight-1788844252823-akfg",
+      "targetId": "insight-1788844252823-w2kh",
+      "type": "similar",
+      "weight": 0.84
+    },
+    {
+      "sourceId": "insight-1788844252823-akfg",
+      "targetId": "insight-1788844252823-u2bm",
+      "type": "similar",
+      "weight": 0.84
+    },
+    {
+      "sourceId": "insight-1788844252823-akfg",
+      "targetId": "insight-1788844252823-dqd4",
+      "type": "similar",
+      "weight": 0.8311688311688312
+    },
+    {
+      "sourceId": "insight-1788844252823-akfg",
+      "targetId": "insight-1788844252823-sys6",
+      "type": "similar",
+      "weight": 0.7325581395348837
+    },
+    {
+      "sourceId": "insight-1788844252823-w2kh",
+      "targetId": "insight-1788844252823-u2bm",
+      "type": "similar",
+      "weight": 0.8421052631578947
+    },
+    {
+      "sourceId": "insight-1788844252823-w2kh",
+      "targetId": "insight-1788844252823-dqd4",
+      "type": "similar",
+      "weight": 0.7875
+    },
+    {
+      "sourceId": "insight-1788844252823-w2kh",
+      "targetId": "insight-1788844252823-sys6",
+      "type": "similar",
+      "weight": 0.7159090909090909
+    },
+    {
+      "sourceId": "insight-1788844252823-u2bm",
+      "targetId": "insight-1788844252823-dqd4",
+      "type": "similar",
+      "weight": 0.810126582278481
+    },
+    {
+      "sourceId": "insight-1788844252823-u2bm",
+      "targetId": "insight-1788844252823-sys6",
+      "type": "similar",
+      "weight": 0.7159090909090909
+    },
+    {
+      "sourceId": "insight-1788844252823-dqd4",
+      "targetId": "insight-1788844252823-sys6",
+      "type": "similar",
+      "weight": 0.7303370786516854
+    }
+  ],
+  "pageRanks": {
+    "mem-MEMORY-memory-index-0": 0.08272657166526473,
+    "mem-philsa-basins-pipeline-milestone-----0": 0.08272657166526473,
+    "insight-1788844252823-akfg": 0.08272657166526473,
+    "insight-1788844252823-w2kh": 0.1003059703735533,
+    "insight-1788844252823-u2bm": 0.12872599040584604,
+    "insight-1788844252823-dqd4": 0.18343451611082012,
+    "insight-1788844252823-sys6": 0.3393538081139861
+  }
+}

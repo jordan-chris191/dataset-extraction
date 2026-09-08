@@ -1,0 +1,752 @@
+[
+  {
+    "timestamp": 1788844252836,
+    "nodes": 7,
+    "edges": 10,
+    "pageRankSum": 0.9999999999999997,
+    "confidences": [
+      0.6000000000000001,
+      0.6000000000000001,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "accessCounts": [
+      2,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "topPatterns": [
+      {
+        "id": "insight-1788844252823-sys6",
+        "summary": "Frequently edited: check_s1_availability.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.3393538081139861,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-dqd4",
+        "summary": "Frequently edited: quality_control.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.18343451611082012,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-memory-index-0",
+        "summary": "Memory index",
+        "confidence": 0.6000000000000001,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 2
+      },
+      {
+        "id": "mem-philsa-basins-pipeline-milestone-----0",
+        "summary": "---",
+        "confidence": 0.6000000000000001,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 2
+      },
+      {
+        "id": "insight-1788844252823-u2bm",
+        "summary": "Frequently edited: alignment.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.12872599040584604,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-w2kh",
+        "summary": "Frequently edited: sentinel1.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.1003059703735533,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-akfg",
+        "summary": "Frequently edited: gee_config.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      }
+    ]
+  },
+  {
+    "timestamp": 1788845153642,
+    "nodes": 7,
+    "edges": 10,
+    "pageRankSum": 0.9999999999999997,
+    "confidences": [
+      0.6000000000000001,
+      0.6000000000000001,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "accessCounts": [
+      2,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "topPatterns": [
+      {
+        "id": "insight-1788844252823-sys6",
+        "summary": "Frequently edited: check_s1_availability.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.3393538081139861,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-dqd4",
+        "summary": "Frequently edited: quality_control.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.18343451611082012,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-memory-index-0",
+        "summary": "Memory index",
+        "confidence": 0.6000000000000001,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 2
+      },
+      {
+        "id": "mem-philsa-basins-pipeline-milestone-----0",
+        "summary": "---",
+        "confidence": 0.6000000000000001,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 2
+      },
+      {
+        "id": "insight-1788844252823-u2bm",
+        "summary": "Frequently edited: alignment.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.12872599040584604,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-w2kh",
+        "summary": "Frequently edited: sentinel1.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.1003059703735533,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-akfg",
+        "summary": "Frequently edited: gee_config.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      }
+    ]
+  },
+  {
+    "timestamp": 1788849779549,
+    "nodes": 7,
+    "edges": 10,
+    "pageRankSum": 0.9999999999999997,
+    "confidences": [
+      0.5,
+      0.5,
+      0.53,
+      0.53,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "accessCounts": [
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "topPatterns": [
+      {
+        "id": "insight-1788844252823-sys6",
+        "summary": "Frequently edited: check_s1_availability.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.3393538081139861,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-dqd4",
+        "summary": "Frequently edited: quality_control.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.18343451611082012,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-u2bm",
+        "summary": "Frequently edited: alignment.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.12872599040584604,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-w2kh",
+        "summary": "Frequently edited: sentinel1.py (3x)",
+        "confidence": 0.53,
+        "pageRank": 0.1003059703735533,
+        "accessCount": 1
+      },
+      {
+        "id": "insight-1788844252823-akfg",
+        "summary": "Frequently edited: gee_config.py (4x)",
+        "confidence": 0.53,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 1
+      },
+      {
+        "id": "mem-MEMORY-memory-index-0",
+        "summary": "Memory index",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-philsa-basins-pipeline-milestone-----0",
+        "summary": "---",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      }
+    ]
+  },
+  {
+    "timestamp": 1788849848549,
+    "nodes": 7,
+    "edges": 10,
+    "pageRankSum": 0.9999999999999997,
+    "confidences": [
+      0.5,
+      0.5,
+      0.53,
+      0.53,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "accessCounts": [
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "topPatterns": [
+      {
+        "id": "insight-1788844252823-sys6",
+        "summary": "Frequently edited: check_s1_availability.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.3393538081139861,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-dqd4",
+        "summary": "Frequently edited: quality_control.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.18343451611082012,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-u2bm",
+        "summary": "Frequently edited: alignment.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.12872599040584604,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-w2kh",
+        "summary": "Frequently edited: sentinel1.py (3x)",
+        "confidence": 0.53,
+        "pageRank": 0.1003059703735533,
+        "accessCount": 1
+      },
+      {
+        "id": "insight-1788844252823-akfg",
+        "summary": "Frequently edited: gee_config.py (4x)",
+        "confidence": 0.53,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 1
+      },
+      {
+        "id": "mem-MEMORY-memory-index-0",
+        "summary": "Memory index",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-philsa-basins-pipeline-milestone-----0",
+        "summary": "---",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      }
+    ]
+  },
+  {
+    "timestamp": 1788850140464,
+    "nodes": 7,
+    "edges": 10,
+    "pageRankSum": 0.9999999999999997,
+    "confidences": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "accessCounts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "topPatterns": [
+      {
+        "id": "insight-1788844252823-sys6",
+        "summary": "Frequently edited: check_s1_availability.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.3393538081139861,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-dqd4",
+        "summary": "Frequently edited: quality_control.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.18343451611082012,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-u2bm",
+        "summary": "Frequently edited: alignment.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.12872599040584604,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-w2kh",
+        "summary": "Frequently edited: sentinel1.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.1003059703735533,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-memory-index-0",
+        "summary": "Memory index",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-philsa-basins-pipeline-milestone-----0",
+        "summary": "---",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-akfg",
+        "summary": "Frequently edited: gee_config.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      }
+    ]
+  },
+  {
+    "timestamp": 1788850365730,
+    "nodes": 7,
+    "edges": 10,
+    "pageRankSum": 0.9999999999999997,
+    "confidences": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "accessCounts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "topPatterns": [
+      {
+        "id": "insight-1788844252823-sys6",
+        "summary": "Frequently edited: check_s1_availability.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.3393538081139861,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-dqd4",
+        "summary": "Frequently edited: quality_control.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.18343451611082012,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-u2bm",
+        "summary": "Frequently edited: alignment.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.12872599040584604,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-w2kh",
+        "summary": "Frequently edited: sentinel1.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.1003059703735533,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-memory-index-0",
+        "summary": "Memory index",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-philsa-basins-pipeline-milestone-----0",
+        "summary": "---",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-akfg",
+        "summary": "Frequently edited: gee_config.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      }
+    ]
+  },
+  {
+    "timestamp": 1788850491207,
+    "nodes": 7,
+    "edges": 10,
+    "pageRankSum": 0.9999999999999997,
+    "confidences": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "accessCounts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "topPatterns": [
+      {
+        "id": "insight-1788844252823-sys6",
+        "summary": "Frequently edited: check_s1_availability.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.3393538081139861,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-dqd4",
+        "summary": "Frequently edited: quality_control.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.18343451611082012,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-u2bm",
+        "summary": "Frequently edited: alignment.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.12872599040584604,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-w2kh",
+        "summary": "Frequently edited: sentinel1.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.1003059703735533,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-memory-index-0",
+        "summary": "Memory index",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-philsa-basins-pipeline-milestone-----0",
+        "summary": "---",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-akfg",
+        "summary": "Frequently edited: gee_config.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      }
+    ]
+  },
+  {
+    "timestamp": 1788850535504,
+    "nodes": 7,
+    "edges": 10,
+    "pageRankSum": 0.9999999999999997,
+    "confidences": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "accessCounts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "topPatterns": [
+      {
+        "id": "insight-1788844252823-sys6",
+        "summary": "Frequently edited: check_s1_availability.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.3393538081139861,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-dqd4",
+        "summary": "Frequently edited: quality_control.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.18343451611082012,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-u2bm",
+        "summary": "Frequently edited: alignment.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.12872599040584604,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-w2kh",
+        "summary": "Frequently edited: sentinel1.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.1003059703735533,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-memory-index-0",
+        "summary": "Memory index",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-philsa-basins-pipeline-milestone-----0",
+        "summary": "---",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-akfg",
+        "summary": "Frequently edited: gee_config.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      }
+    ]
+  },
+  {
+    "timestamp": 1788850610945,
+    "nodes": 7,
+    "edges": 10,
+    "pageRankSum": 0.9999999999999997,
+    "confidences": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "accessCounts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "topPatterns": [
+      {
+        "id": "insight-1788844252823-sys6",
+        "summary": "Frequently edited: check_s1_availability.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.3393538081139861,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-dqd4",
+        "summary": "Frequently edited: quality_control.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.18343451611082012,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-u2bm",
+        "summary": "Frequently edited: alignment.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.12872599040584604,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-w2kh",
+        "summary": "Frequently edited: sentinel1.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.1003059703735533,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-memory-index-0",
+        "summary": "Memory index",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-philsa-basins-pipeline-milestone-----0",
+        "summary": "---",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-akfg",
+        "summary": "Frequently edited: gee_config.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      }
+    ]
+  },
+  {
+    "timestamp": 1788850736648,
+    "nodes": 7,
+    "edges": 10,
+    "pageRankSum": 0.9999999999999997,
+    "confidences": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "accessCounts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "topPatterns": [
+      {
+        "id": "insight-1788844252823-sys6",
+        "summary": "Frequently edited: check_s1_availability.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.3393538081139861,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-dqd4",
+        "summary": "Frequently edited: quality_control.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.18343451611082012,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-u2bm",
+        "summary": "Frequently edited: alignment.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.12872599040584604,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-w2kh",
+        "summary": "Frequently edited: sentinel1.py (3x)",
+        "confidence": 0.5,
+        "pageRank": 0.1003059703735533,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-memory-index-0",
+        "summary": "Memory index",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-philsa-basins-pipeline-milestone-----0",
+        "summary": "---",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1788844252823-akfg",
+        "summary": "Frequently edited: gee_config.py (4x)",
+        "confidence": 0.5,
+        "pageRank": 0.08272657166526473,
+        "accessCount": 0
+      }
+    ]
+  }
+]
