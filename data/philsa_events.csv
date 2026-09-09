@@ -1,4 +1,4 @@
 event_id,basin,philsa_shapefile_path,flood_date
 cagayan_2024-10-27,cagayan,data/philsa_shapefiles/cagayan_2024-10-27.shp,2024-10-27
 pampanga_2024-07-23,pampanga,data/philsa_shapefiles/pampanga_2024-07-23.shp,2024-07-23
-agusan_2023-01-03,agusan,data/philsa_shapefiles/agusan_2023-01-03.shp,2023-01-03
+agno_2023-09-03,agno,data/philsa_shapefiles/agno_2023-09-03.shp,2023-09-03

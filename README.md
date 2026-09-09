@@ -58,7 +58,7 @@ whichever you have:
 BASINS = {
     "cagayan":  {"local_path": "data/basins/cagayan.geojson"},
     "pampanga": {"local_path": "data/basins/pampanga.geojson"},
-    "agusan":   {"local_path": "data/basins/agusan.geojson"},
+    "agno":     {"local_path": "data/basins/agno.geojson"},
 }
 ```
 The file is read locally with geopandas, reprojected to EPSG:4326, and pushed
@@ -125,11 +125,22 @@ projection, resolution, alignment, rasterization, patch stats).
 
 ## What each exported patch contains
 
-**One multi-band GeoTIFF per patch**, 256×256 px @ 10 m, bands in this order:
+**One multi-band GeoTIFF per patch**, 257×257 px @ 10 m (note the border),
+bands in this order:
 
 ```
 VV_pre, VH_pre, VV_post, VH_post, hand, elevation, flow_acc, flood_mask
 ```
+
+> **257 px export border:** the grid is configured as 256×256 px
+> (`PATCH_SIZE_PX`, `PATCH_SIZE_M`), but Earth Engine's `toDrive` export
+> appends a **1-px border on every side** because the patch rect doesn't land
+> on exact pixel edges, so the delivered GeoTIFF is **257×257**. This is
+> expected and harmless: all bands (SAR + MERIT + `flood_mask`) are stacked
+> into ONE image and exported in the same 257×257 grid, so they stay
+> pixel-aligned. **Do NOT crop to 256 per-band separately** (that would
+> reintroduce drift); read the full 257×257 and rely on the tiff's own
+> geotransform. Model training loaders must not hard-code a 256 window.
 
 * First 7 are model **input** channels (`gee_config.OUTPUT_BANDS`).
 * `flood_mask` is the PhilSA-derived binary **label** (1 = flood, 0 = not).

@@ -3,3 +3,6 @@ cagayan_2024-10-27	valid		selected=112
 pampanga_2024-07-23	failed	quality_control_failed	selected=0
 pampanga_2024-07-23	failed	missing_pre_s1	selected=0
 pampanga_2024-07-23	valid		selected=120
+agno_2024-07-23	failed	missing_pre_s1	selected=0
+agno_2024-07-23	failed	insufficient_coverage	selected=0
+agno_2023-09-03	valid		selected=73

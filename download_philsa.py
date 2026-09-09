@@ -69,7 +69,7 @@ def acquire(
     `region` selects the SHP resource by a region token in the resource name
     when given (e.g. "cagayan-isabela"). Pass `region=None` for packages whose
     SHP filename carries NO region token (single unnamed S1 SHP, e.g. the
-    Pampanga/Agusan nationwide packages) — the S1 SHP is then picked directly,
+    Pampanga/Agno nationwide packages) — the S1 SHP is then picked directly,
     and the basin boundary defines the clip, not the resource name.
 
     Returns a structured report dict:

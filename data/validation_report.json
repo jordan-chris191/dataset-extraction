@@ -2750,6 +2750,718 @@
         }
       ],
       "status": "valid"
+    },
+    {
+      "event_id": "agno_2024-07-23",
+      "basin": "agno",
+      "flood_date": "2024-07-23",
+      "checks": {
+        "prerequisites": {
+          "ok": true,
+          "problems": [],
+          "report": {
+            "path": "data/philsa_shapefiles/agno_2024-07-23.shp",
+            "n_features": 34005,
+            "columns": [
+              "DN",
+              "ImageDate",
+              "DataSource",
+              "Line",
+              "geometry"
+            ],
+            "geometry_type": [
+              "Polygon"
+            ],
+            "crs": "EPSG:4326",
+            "bounds": [
+              118.91228110836929,
+              9.927951731838379,
+              122.47162495329499,
+              19.486303147338482
+            ]
+          }
+        },
+        "s1": {
+          "ok": false,
+          "detail": "No pre-flood S1 scene found for 2024-07-23 within 24 day(s), min_gap=1 day(s), pass=ASCENDING."
+        }
+      },
+      "failures": [
+        "missing_pre_s1"
+      ],
+      "warnings": [],
+      "selected_patches": [],
+      "preview_patches": [],
+      "status": "failed"
+    },
+    {
+      "event_id": "agno_2024-07-23",
+      "basin": "agno",
+      "flood_date": "2024-07-23",
+      "checks": {
+        "prerequisites": {
+          "ok": true,
+          "problems": [],
+          "report": {
+            "path": "data/philsa_shapefiles/agno_2024-07-23.shp",
+            "n_features": 34005,
+            "columns": [
+              "DN",
+              "ImageDate",
+              "DataSource",
+              "Line",
+              "geometry"
+            ],
+            "geometry_type": [
+              "Polygon"
+            ],
+            "crs": "EPSG:4326",
+            "bounds": [
+              118.91228110836929,
+              9.927951731838379,
+              122.47162495329499,
+              19.486303147338482
+            ]
+          }
+        },
+        "s1": {
+          "ok": true,
+          "pre_s1_date": "2024-07-15",
+          "post_s1_date": "2024-08-03",
+          "vv_vh_available": true,
+          "orbit_pass": "DESCENDING",
+          "pre_relative_orbit": 105,
+          "post_relative_orbit": 32,
+          "pre_selection_reason": "Latest valid S1 IW VV+VH scene strictly before flood_date 2024-07-23 (min 1 day gap), within 24-day pre window (2024-06-29 .. 2024-07-22).",
+          "post_selection_reason": "Earliest valid S1 IW VV+VH scene at-or-after flood_date 2024-07-23, within 14-day post window (2024-07-23 .. 2024-08-06) (preferred_pass=DESCENDING)."
+        },
+        "merit_hydro": {
+          "ok": true,
+          "detail": "hand, elevation, flow_acc"
+        },
+        "alignment": {
+          "target_resolution_m": 10,
+          "working_crs": "EPSG:32651",
+          "sar_projection": "unknown",
+          "hydro_projection": "EPSG:4326",
+          "mask_projection": "EPSG:4326",
+          "projections_consistent": false,
+          "note": "Bands are written as one stacked image for export at crs=EPSG:32651 and scale=10 m; grids coincide by construction."
+        },
+        "patch_grid": {
+          "epsg": "EPSG:32651",
+          "n_patches": 606
+        },
+        "minimum_patches": {
+          "required": 1,
+          "selected": 0
+        }
+      },
+      "failures": [
+        "insufficient_coverage"
+      ],
+      "warnings": [],
+      "selected_patches": [],
+      "preview_patches": [],
+      "status": "failed"
+    },
+    {
+      "event_id": "agno_2023-09-03",
+      "basin": "agno",
+      "flood_date": "2023-09-03",
+      "checks": {
+        "prerequisites": {
+          "ok": true,
+          "problems": [],
+          "report": {
+            "path": "data/philsa_shapefiles/agno_2023-09-03.shp",
+            "n_features": 30908,
+            "columns": [
+              "DN",
+              "ImageDate",
+              "DataSource",
+              "Line",
+              "geometry"
+            ],
+            "geometry_type": [
+              "Polygon"
+            ],
+            "crs": "EPSG:4326",
+            "bounds": [
+              118.91105531643117,
+              9.609715066296973,
+              122.4393973932914,
+              19.489697123683147
+            ]
+          }
+        },
+        "s1": {
+          "ok": true,
+          "pre_s1_date": "2023-08-26",
+          "post_s1_date": "2023-09-07",
+          "vv_vh_available": true,
+          "orbit_pass": "DESCENDING",
+          "pre_relative_orbit": 105,
+          "post_relative_orbit": 105,
+          "pre_selection_reason": "Latest valid S1 IW VV+VH scene strictly before flood_date 2023-09-03 (min 1 day gap), within 24-day pre window (2023-08-10 .. 2023-09-02).",
+          "post_selection_reason": "Earliest valid S1 IW VV+VH scene at-or-after flood_date 2023-09-03, within 14-day post window (2023-09-03 .. 2023-09-17) (preferred_pass=DESCENDING)."
+        },
+        "merit_hydro": {
+          "ok": true,
+          "detail": "hand, elevation, flow_acc"
+        },
+        "alignment": {
+          "target_resolution_m": 10,
+          "working_crs": "EPSG:32651",
+          "sar_projection": "unknown",
+          "hydro_projection": "EPSG:4326",
+          "mask_projection": "EPSG:4326",
+          "projections_consistent": false,
+          "note": "Bands are written as one stacked image for export at crs=EPSG:32651 and scale=10 m; grids coincide by construction."
+        },
+        "patch_grid": {
+          "epsg": "EPSG:32651",
+          "n_patches": 665
+        },
+        "minimum_patches": {
+          "required": 1,
+          "selected": 73
+        }
+      },
+      "failures": [],
+      "warnings": [],
+      "selected_patches": [
+        {
+          "patch_id": "agno_2023-09-03_r017_c008",
+          "row": 17,
+          "col": 8,
+          "flood_pixel_percentage": 0.44,
+          "valid_pixel_percentage": 99.55
+        },
+        {
+          "patch_id": "agno_2023-09-03_r030_c007",
+          "row": 30,
+          "col": 7,
+          "flood_pixel_percentage": 0.44,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r017_c007",
+          "row": 17,
+          "col": 7,
+          "flood_pixel_percentage": 0.56,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r025_c004",
+          "row": 25,
+          "col": 4,
+          "flood_pixel_percentage": 0.4,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r021_c006",
+          "row": 21,
+          "col": 6,
+          "flood_pixel_percentage": 0.63,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r026_c009",
+          "row": 26,
+          "col": 9,
+          "flood_pixel_percentage": 0.34,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r023_c006",
+          "row": 23,
+          "col": 6,
+          "flood_pixel_percentage": 0.33,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r024_c004",
+          "row": 24,
+          "col": 4,
+          "flood_pixel_percentage": 0.33,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r031_c008",
+          "row": 31,
+          "col": 8,
+          "flood_pixel_percentage": 0.32,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r025_c005",
+          "row": 25,
+          "col": 5,
+          "flood_pixel_percentage": 0.3,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r018_c008",
+          "row": 18,
+          "col": 8,
+          "flood_pixel_percentage": 0.25,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r022_c006",
+          "row": 22,
+          "col": 6,
+          "flood_pixel_percentage": 0.25,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r029_c006",
+          "row": 29,
+          "col": 6,
+          "flood_pixel_percentage": 0.25,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r031_c003",
+          "row": 31,
+          "col": 3,
+          "flood_pixel_percentage": 0.25,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r031_c006",
+          "row": 31,
+          "col": 6,
+          "flood_pixel_percentage": 0.22,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r021_c005",
+          "row": 21,
+          "col": 5,
+          "flood_pixel_percentage": 0.8,
+          "valid_pixel_percentage": 98.27
+        },
+        {
+          "patch_id": "agno_2023-09-03_r027_c003",
+          "row": 27,
+          "col": 3,
+          "flood_pixel_percentage": 0.81,
+          "valid_pixel_percentage": 99.64
+        },
+        {
+          "patch_id": "agno_2023-09-03_r019_c007",
+          "row": 19,
+          "col": 7,
+          "flood_pixel_percentage": 0.11,
+          "valid_pixel_percentage": 99.09
+        },
+        {
+          "patch_id": "agno_2023-09-03_r027_c009",
+          "row": 27,
+          "col": 9,
+          "flood_pixel_percentage": 0.1,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r029_c010",
+          "row": 29,
+          "col": 10,
+          "flood_pixel_percentage": 0.9,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r023_c005",
+          "row": 23,
+          "col": 5,
+          "flood_pixel_percentage": 0.95,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r030_c006",
+          "row": 30,
+          "col": 6,
+          "flood_pixel_percentage": 0.05,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r028_c008",
+          "row": 28,
+          "col": 8,
+          "flood_pixel_percentage": 0.04,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r020_c006",
+          "row": 20,
+          "col": 6,
+          "flood_pixel_percentage": 0.03,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r020_c007",
+          "row": 20,
+          "col": 7,
+          "flood_pixel_percentage": 0.0,
+          "valid_pixel_percentage": 99.57
+        },
+        {
+          "patch_id": "agno_2023-09-03_r027_c008",
+          "row": 27,
+          "col": 8,
+          "flood_pixel_percentage": 0.0,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r028_c006",
+          "row": 28,
+          "col": 6,
+          "flood_pixel_percentage": 0.0,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r028_c005",
+          "row": 28,
+          "col": 5,
+          "flood_pixel_percentage": 5.51,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r029_c007",
+          "row": 29,
+          "col": 7,
+          "flood_pixel_percentage": 5.58,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r027_c006",
+          "row": 27,
+          "col": 6,
+          "flood_pixel_percentage": 5.86,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r031_c004",
+          "row": 31,
+          "col": 4,
+          "flood_pixel_percentage": 4.26,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r025_c006",
+          "row": 25,
+          "col": 6,
+          "flood_pixel_percentage": 4.24,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r025_c007",
+          "row": 25,
+          "col": 7,
+          "flood_pixel_percentage": 4.16,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r030_c008",
+          "row": 30,
+          "col": 8,
+          "flood_pixel_percentage": 7.15,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r026_c006",
+          "row": 26,
+          "col": 6,
+          "flood_pixel_percentage": 7.43,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r030_c005",
+          "row": 30,
+          "col": 5,
+          "flood_pixel_percentage": 3.11,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r025_c009",
+          "row": 25,
+          "col": 9,
+          "flood_pixel_percentage": 3.07,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r028_c007",
+          "row": 28,
+          "col": 7,
+          "flood_pixel_percentage": 3.02,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r027_c010",
+          "row": 27,
+          "col": 10,
+          "flood_pixel_percentage": 2.85,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r032_c004",
+          "row": 32,
+          "col": 4,
+          "flood_pixel_percentage": 2.84,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r026_c005",
+          "row": 26,
+          "col": 5,
+          "flood_pixel_percentage": 8.6,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r022_c007",
+          "row": 22,
+          "col": 7,
+          "flood_pixel_percentage": 2.33,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r030_c004",
+          "row": 30,
+          "col": 4,
+          "flood_pixel_percentage": 8.83,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r026_c007",
+          "row": 26,
+          "col": 7,
+          "flood_pixel_percentage": 1.97,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r024_c007",
+          "row": 24,
+          "col": 7,
+          "flood_pixel_percentage": 9.06,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r023_c009",
+          "row": 23,
+          "col": 9,
+          "flood_pixel_percentage": 1.91,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r031_c005",
+          "row": 31,
+          "col": 5,
+          "flood_pixel_percentage": 1.86,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r027_c007",
+          "row": 27,
+          "col": 7,
+          "flood_pixel_percentage": 1.67,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r029_c008",
+          "row": 29,
+          "col": 8,
+          "flood_pixel_percentage": 1.67,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r029_c009",
+          "row": 29,
+          "col": 9,
+          "flood_pixel_percentage": 1.58,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r022_c005",
+          "row": 22,
+          "col": 5,
+          "flood_pixel_percentage": 1.47,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r026_c004",
+          "row": 26,
+          "col": 4,
+          "flood_pixel_percentage": 1.31,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r021_c007",
+          "row": 21,
+          "col": 7,
+          "flood_pixel_percentage": 1.25,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r024_c005",
+          "row": 24,
+          "col": 5,
+          "flood_pixel_percentage": 1.21,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r031_c007",
+          "row": 31,
+          "col": 7,
+          "flood_pixel_percentage": 1.21,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r029_c003",
+          "row": 29,
+          "col": 3,
+          "flood_pixel_percentage": 1.13,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r027_c004",
+          "row": 27,
+          "col": 4,
+          "flood_pixel_percentage": 9.88,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r032_c003",
+          "row": 32,
+          "col": 3,
+          "flood_pixel_percentage": 1.06,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r024_c009",
+          "row": 24,
+          "col": 9,
+          "flood_pixel_percentage": 1.0,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r023_c008",
+          "row": 23,
+          "col": 8,
+          "flood_pixel_percentage": 19.91,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r024_c008",
+          "row": 24,
+          "col": 8,
+          "flood_pixel_percentage": 19.91,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r024_c006",
+          "row": 24,
+          "col": 6,
+          "flood_pixel_percentage": 18.72,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r030_c003",
+          "row": 30,
+          "col": 3,
+          "flood_pixel_percentage": 18.38,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r026_c008",
+          "row": 26,
+          "col": 8,
+          "flood_pixel_percentage": 18.18,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r028_c004",
+          "row": 28,
+          "col": 4,
+          "flood_pixel_percentage": 18.17,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r022_c008",
+          "row": 22,
+          "col": 8,
+          "flood_pixel_percentage": 24.24,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r023_c007",
+          "row": 23,
+          "col": 7,
+          "flood_pixel_percentage": 24.33,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r022_c009",
+          "row": 22,
+          "col": 9,
+          "flood_pixel_percentage": 14.13,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r027_c005",
+          "row": 27,
+          "col": 5,
+          "flood_pixel_percentage": 13.82,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r029_c004",
+          "row": 29,
+          "col": 4,
+          "flood_pixel_percentage": 12.96,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r025_c008",
+          "row": 25,
+          "col": 8,
+          "flood_pixel_percentage": 28.66,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r029_c005",
+          "row": 29,
+          "col": 5,
+          "flood_pixel_percentage": 10.28,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "agno_2023-09-03_r021_c008",
+          "row": 21,
+          "col": 8,
+          "flood_pixel_percentage": 33.33,
+          "valid_pixel_percentage": 100.0
+        }
+      ],
+      "preview_patches": [
+        {
+          "patch_id": "agno_2023-09-03_r017_c008",
+          "task_id": "UULS34ZUSRDFTYG4XC5LAUZJ"
+        },
+        {
+          "patch_id": "agno_2023-09-03_r030_c007",
+          "task_id": "UQMY2PXKMRMSIKUZBPYOVBQN"
+        },
+        {
+          "patch_id": "agno_2023-09-03_r017_c007",
+          "task_id": "GEVBXILX25HTJ37LRV52NSI6"
+        },
+        {
+          "patch_id": "agno_2023-09-03_r025_c004",
+          "task_id": "MM6PU3N3XWAE42DABPPPYPF2"
+        }
+      ],
+      "status": "valid"
     }
   ]
 }

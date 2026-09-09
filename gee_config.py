@@ -43,7 +43,7 @@ EE_PROJECT: Optional[str] = "flood-thesis-507015"
 BASINS = {
     "cagayan":  {"local_path": "data/basins/cagayan_bbox.geojson"},
     "pampanga": {"local_path": "data/basins/pampanga.geojson"},
-    "agusan":   {"local_path": "data/basins/agusan.geojson"},
+    "agno":     {"local_path": "data/basins/agno.geojson"},
 }
 
 # ---------------------------------------------------------------------------
@@ -89,7 +89,7 @@ S1_REQUIRE_MATCHING_ORBIT_PASS = True
 # that event and picks the closest-in-time scene on whichever pass has data.
 S1_MATCH_ORBIT_PASS_BY_BASIN = {
     "pampanga": False,
-    "agusan":   False,
+    "agno":     False,
 }
 
 # Temporal selection windows (applied around flood_date):

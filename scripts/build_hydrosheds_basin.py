@@ -17,7 +17,7 @@ Usage (run from the repo root; the au lev12 zip must already be downloaded
 and extracted under data/hydrosheds/):
   # Resolve the outlet by anchor lat/lon (nearest lev12 polygon):
   python scripts/build_hydrosheds_basin.py --outlet-lat 15.0 --outlet-lon 120.5 --name pampanga
-  python scripts/build_hydrosheds_basin.py --outlet-lat 8.96 --outlet-lon 125.5 --name agusan
+  python scripts/build_hydrosheds_basin.py --hybas-id 5120029740 --name agno
 
   # Or by an exact HydroBASINS outlet id (regression / well-known basins):
   python scripts/build_hydrosheds_basin.py --hybas-id 5120030230 --name cagayan
