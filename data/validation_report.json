@@ -1737,6 +1737,1019 @@
         }
       ],
       "status": "valid"
+    },
+    {
+      "event_id": "pampanga_2024-07-23",
+      "basin": "pampanga",
+      "flood_date": "2024-07-23",
+      "checks": {
+        "prerequisites": {
+          "ok": true,
+          "problems": [],
+          "report": {
+            "path": "data/philsa_shapefiles/pampanga_2024-07-23.shp",
+            "n_features": 34005,
+            "columns": [
+              "DN",
+              "ImageDate",
+              "DataSource",
+              "Line",
+              "geometry"
+            ],
+            "geometry_type": [
+              "Polygon"
+            ],
+            "crs": "EPSG:4326",
+            "bounds": [
+              118.91228110836929,
+              9.927951731838379,
+              122.47162495329499,
+              19.486303147338482
+            ]
+          }
+        },
+        "s1": {
+          "ok": false,
+          "detail": "Request payload size exceeds the limit: 10485760 bytes."
+        }
+      },
+      "failures": [
+        "quality_control_failed"
+      ],
+      "warnings": [],
+      "selected_patches": [],
+      "preview_patches": [],
+      "status": "failed"
+    },
+    {
+      "event_id": "pampanga_2024-07-23",
+      "basin": "pampanga",
+      "flood_date": "2024-07-23",
+      "checks": {
+        "prerequisites": {
+          "ok": true,
+          "problems": [],
+          "report": {
+            "path": "data/philsa_shapefiles/pampanga_2024-07-23.shp",
+            "n_features": 34005,
+            "columns": [
+              "DN",
+              "ImageDate",
+              "DataSource",
+              "Line",
+              "geometry"
+            ],
+            "geometry_type": [
+              "Polygon"
+            ],
+            "crs": "EPSG:4326",
+            "bounds": [
+              118.91228110836929,
+              9.927951731838379,
+              122.47162495329499,
+              19.486303147338482
+            ]
+          }
+        },
+        "s1": {
+          "ok": false,
+          "detail": "No pre-flood S1 scene found for 2024-07-23 within 24 day(s), min_gap=1 day(s), pass=ASCENDING."
+        }
+      },
+      "failures": [
+        "missing_pre_s1"
+      ],
+      "warnings": [],
+      "selected_patches": [],
+      "preview_patches": [],
+      "status": "failed"
+    },
+    {
+      "event_id": "pampanga_2024-07-23",
+      "basin": "pampanga",
+      "flood_date": "2024-07-23",
+      "checks": {
+        "prerequisites": {
+          "ok": true,
+          "problems": [],
+          "report": {
+            "path": "data/philsa_shapefiles/pampanga_2024-07-23.shp",
+            "n_features": 34005,
+            "columns": [
+              "DN",
+              "ImageDate",
+              "DataSource",
+              "Line",
+              "geometry"
+            ],
+            "geometry_type": [
+              "Polygon"
+            ],
+            "crs": "EPSG:4326",
+            "bounds": [
+              118.91228110836929,
+              9.927951731838379,
+              122.47162495329499,
+              19.486303147338482
+            ]
+          }
+        },
+        "s1": {
+          "ok": true,
+          "pre_s1_date": "2024-07-10",
+          "post_s1_date": "2024-08-03",
+          "vv_vh_available": true,
+          "orbit_pass": "DESCENDING",
+          "pre_relative_orbit": 32,
+          "post_relative_orbit": 32,
+          "pre_selection_reason": "Latest valid S1 IW VV+VH scene strictly before flood_date 2024-07-23 (min 1 day gap), within 24-day pre window (2024-06-29 .. 2024-07-22).",
+          "post_selection_reason": "Earliest valid S1 IW VV+VH scene at-or-after flood_date 2024-07-23, within 14-day post window (2024-07-23 .. 2024-08-06) (preferred_pass=DESCENDING)."
+        },
+        "merit_hydro": {
+          "ok": true,
+          "detail": "hand, elevation, flow_acc"
+        },
+        "alignment": {
+          "target_resolution_m": 10,
+          "working_crs": "EPSG:32651",
+          "sar_projection": "unknown",
+          "hydro_projection": "EPSG:4326",
+          "mask_projection": "EPSG:4326",
+          "projections_consistent": false,
+          "note": "Bands are written as one stacked image for export at crs=EPSG:32651 and scale=10 m; grids coincide by construction."
+        },
+        "patch_grid": {
+          "epsg": "EPSG:32651",
+          "n_patches": 1076
+        },
+        "minimum_patches": {
+          "required": 1,
+          "selected": 120
+        }
+      },
+      "failures": [],
+      "warnings": [],
+      "selected_patches": [
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c026",
+          "row": 10,
+          "col": 26,
+          "flood_pixel_percentage": 0.49,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r012_c018",
+          "row": 12,
+          "col": 18,
+          "flood_pixel_percentage": 0.53,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r007_c013",
+          "row": 7,
+          "col": 13,
+          "flood_pixel_percentage": 0.54,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r009_c010",
+          "row": 9,
+          "col": 10,
+          "flood_pixel_percentage": 0.45,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r013_c009",
+          "row": 13,
+          "col": 9,
+          "flood_pixel_percentage": 0.55,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r003_c014",
+          "row": 3,
+          "col": 14,
+          "flood_pixel_percentage": 0.44,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r011_c024",
+          "row": 11,
+          "col": 24,
+          "flood_pixel_percentage": 0.56,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r006_c013",
+          "row": 6,
+          "col": 13,
+          "flood_pixel_percentage": 0.57,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r011_c028",
+          "row": 11,
+          "col": 28,
+          "flood_pixel_percentage": 0.41,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r015_c012",
+          "row": 15,
+          "col": 12,
+          "flood_pixel_percentage": 0.41,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c026",
+          "row": 8,
+          "col": 26,
+          "flood_pixel_percentage": 0.4,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r012_c017",
+          "row": 12,
+          "col": 17,
+          "flood_pixel_percentage": 0.4,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c024",
+          "row": 10,
+          "col": 24,
+          "flood_pixel_percentage": 0.62,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r005_c029",
+          "row": 5,
+          "col": 29,
+          "flood_pixel_percentage": 0.65,
+          "valid_pixel_percentage": 98.87
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r015_c010",
+          "row": 15,
+          "col": 10,
+          "flood_pixel_percentage": 0.34,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r012_c016",
+          "row": 12,
+          "col": 16,
+          "flood_pixel_percentage": 0.33,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c025",
+          "row": 8,
+          "col": 25,
+          "flood_pixel_percentage": 0.69,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r007_c011",
+          "row": 7,
+          "col": 11,
+          "flood_pixel_percentage": 0.3,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r012_c015",
+          "row": 12,
+          "col": 15,
+          "flood_pixel_percentage": 0.3,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r004_c013",
+          "row": 4,
+          "col": 13,
+          "flood_pixel_percentage": 0.29,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c024",
+          "row": 8,
+          "col": 24,
+          "flood_pixel_percentage": 0.29,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r012_c024",
+          "row": 12,
+          "col": 24,
+          "flood_pixel_percentage": 0.28,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r009_c025",
+          "row": 9,
+          "col": 25,
+          "flood_pixel_percentage": 0.27,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r011_c026",
+          "row": 11,
+          "col": 26,
+          "flood_pixel_percentage": 0.74,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r012_c020",
+          "row": 12,
+          "col": 20,
+          "flood_pixel_percentage": 0.79,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r007_c025",
+          "row": 7,
+          "col": 25,
+          "flood_pixel_percentage": 0.8,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r015_c009",
+          "row": 15,
+          "col": 9,
+          "flood_pixel_percentage": 0.19,
+          "valid_pixel_percentage": 99.99
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c009",
+          "row": 10,
+          "col": 9,
+          "flood_pixel_percentage": 0.18,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r014_c012",
+          "row": 14,
+          "col": 12,
+          "flood_pixel_percentage": 0.18,
+          "valid_pixel_percentage": 99.99
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r015_c013",
+          "row": 15,
+          "col": 13,
+          "flood_pixel_percentage": 0.85,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r006_c026",
+          "row": 6,
+          "col": 26,
+          "flood_pixel_percentage": 0.87,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c025",
+          "row": 10,
+          "col": 25,
+          "flood_pixel_percentage": 0.13,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c023",
+          "row": 8,
+          "col": 23,
+          "flood_pixel_percentage": 0.11,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c027",
+          "row": 10,
+          "col": 27,
+          "flood_pixel_percentage": 0.11,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r004_c027",
+          "row": 4,
+          "col": 27,
+          "flood_pixel_percentage": 0.1,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c028",
+          "row": 10,
+          "col": 28,
+          "flood_pixel_percentage": 0.09,
+          "valid_pixel_percentage": 99.55
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r011_c009",
+          "row": 11,
+          "col": 9,
+          "flood_pixel_percentage": 0.91,
+          "valid_pixel_percentage": 98.41
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r004_c028",
+          "row": 4,
+          "col": 28,
+          "flood_pixel_percentage": 0.06,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r013_c017",
+          "row": 13,
+          "col": 17,
+          "flood_pixel_percentage": 0.95,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r013_c019",
+          "row": 13,
+          "col": 19,
+          "flood_pixel_percentage": 0.95,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r011_c015",
+          "row": 11,
+          "col": 15,
+          "flood_pixel_percentage": 5.64,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c027",
+          "row": 8,
+          "col": 27,
+          "flood_pixel_percentage": 5.73,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c013",
+          "row": 8,
+          "col": 13,
+          "flood_pixel_percentage": 5.17,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r012_c025",
+          "row": 12,
+          "col": 25,
+          "flood_pixel_percentage": 4.95,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c013",
+          "row": 10,
+          "col": 13,
+          "flood_pixel_percentage": 6.11,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r013_c022",
+          "row": 13,
+          "col": 22,
+          "flood_pixel_percentage": 6.14,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r012_c014",
+          "row": 12,
+          "col": 14,
+          "flood_pixel_percentage": 4.76,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c012",
+          "row": 8,
+          "col": 12,
+          "flood_pixel_percentage": 4.62,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c016",
+          "row": 10,
+          "col": 16,
+          "flood_pixel_percentage": 4.61,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r009_c015",
+          "row": 9,
+          "col": 15,
+          "flood_pixel_percentage": 4.51,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r011_c023",
+          "row": 11,
+          "col": 23,
+          "flood_pixel_percentage": 4.41,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c014",
+          "row": 10,
+          "col": 14,
+          "flood_pixel_percentage": 6.61,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r014_c017",
+          "row": 14,
+          "col": 17,
+          "flood_pixel_percentage": 4.37,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r015_c014",
+          "row": 15,
+          "col": 14,
+          "flood_pixel_percentage": 4.29,
+          "valid_pixel_percentage": 98.65
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c023",
+          "row": 10,
+          "col": 23,
+          "flood_pixel_percentage": 4.28,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r004_c017",
+          "row": 4,
+          "col": 17,
+          "flood_pixel_percentage": 6.73,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c020",
+          "row": 10,
+          "col": 20,
+          "flood_pixel_percentage": 6.86,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r006_c015",
+          "row": 6,
+          "col": 15,
+          "flood_pixel_percentage": 7.03,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r013_c016",
+          "row": 13,
+          "col": 16,
+          "flood_pixel_percentage": 3.9,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c017",
+          "row": 10,
+          "col": 17,
+          "flood_pixel_percentage": 3.87,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r007_c022",
+          "row": 7,
+          "col": 22,
+          "flood_pixel_percentage": 3.81,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c014",
+          "row": 8,
+          "col": 14,
+          "flood_pixel_percentage": 7.21,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c016",
+          "row": 8,
+          "col": 16,
+          "flood_pixel_percentage": 3.71,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r011_c014",
+          "row": 11,
+          "col": 14,
+          "flood_pixel_percentage": 7.32,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c015",
+          "row": 8,
+          "col": 15,
+          "flood_pixel_percentage": 3.67,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r006_c014",
+          "row": 6,
+          "col": 14,
+          "flood_pixel_percentage": 3.64,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r007_c014",
+          "row": 7,
+          "col": 14,
+          "flood_pixel_percentage": 3.49,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r012_c019",
+          "row": 12,
+          "col": 19,
+          "flood_pixel_percentage": 3.42,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r009_c016",
+          "row": 9,
+          "col": 16,
+          "flood_pixel_percentage": 3.36,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r006_c025",
+          "row": 6,
+          "col": 25,
+          "flood_pixel_percentage": 3.27,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r013_c020",
+          "row": 13,
+          "col": 20,
+          "flood_pixel_percentage": 3.07,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r012_c021",
+          "row": 12,
+          "col": 21,
+          "flood_pixel_percentage": 3.05,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r006_c024",
+          "row": 6,
+          "col": 24,
+          "flood_pixel_percentage": 3.02,
+          "valid_pixel_percentage": 99.78
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r009_c014",
+          "row": 9,
+          "col": 14,
+          "flood_pixel_percentage": 2.94,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r013_c014",
+          "row": 13,
+          "col": 14,
+          "flood_pixel_percentage": 2.78,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c015",
+          "row": 10,
+          "col": 15,
+          "flood_pixel_percentage": 8.3,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r009_c013",
+          "row": 9,
+          "col": 13,
+          "flood_pixel_percentage": 2.67,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r011_c011",
+          "row": 11,
+          "col": 11,
+          "flood_pixel_percentage": 2.67,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r012_c022",
+          "row": 12,
+          "col": 22,
+          "flood_pixel_percentage": 2.64,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r011_c013",
+          "row": 11,
+          "col": 13,
+          "flood_pixel_percentage": 2.58,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c022",
+          "row": 8,
+          "col": 22,
+          "flood_pixel_percentage": 21.04,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r005_c016",
+          "row": 5,
+          "col": 16,
+          "flood_pixel_percentage": 21.32,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r007_c015",
+          "row": 7,
+          "col": 15,
+          "flood_pixel_percentage": 21.92,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c018",
+          "row": 10,
+          "col": 18,
+          "flood_pixel_percentage": 17.67,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r006_c018",
+          "row": 6,
+          "col": 18,
+          "flood_pixel_percentage": 17.3,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r011_c022",
+          "row": 11,
+          "col": 22,
+          "flood_pixel_percentage": 17.29,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r006_c020",
+          "row": 6,
+          "col": 20,
+          "flood_pixel_percentage": 22.75,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c017",
+          "row": 8,
+          "col": 17,
+          "flood_pixel_percentage": 17.1,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r012_c013",
+          "row": 12,
+          "col": 13,
+          "flood_pixel_percentage": 16.84,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r009_c019",
+          "row": 9,
+          "col": 19,
+          "flood_pixel_percentage": 23.18,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r013_c013",
+          "row": 13,
+          "col": 13,
+          "flood_pixel_percentage": 16.77,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r009_c022",
+          "row": 9,
+          "col": 22,
+          "flood_pixel_percentage": 16.69,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r007_c021",
+          "row": 7,
+          "col": 21,
+          "flood_pixel_percentage": 14.65,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r006_c016",
+          "row": 6,
+          "col": 16,
+          "flood_pixel_percentage": 25.44,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r007_c016",
+          "row": 7,
+          "col": 16,
+          "flood_pixel_percentage": 25.61,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r007_c020",
+          "row": 7,
+          "col": 20,
+          "flood_pixel_percentage": 25.92,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r009_c020",
+          "row": 9,
+          "col": 20,
+          "flood_pixel_percentage": 13.81,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r005_c020",
+          "row": 5,
+          "col": 20,
+          "flood_pixel_percentage": 12.93,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c019",
+          "row": 10,
+          "col": 19,
+          "flood_pixel_percentage": 11.35,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r011_c020",
+          "row": 11,
+          "col": 20,
+          "flood_pixel_percentage": 11.24,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r004_c018",
+          "row": 4,
+          "col": 18,
+          "flood_pixel_percentage": 11.14,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c020",
+          "row": 8,
+          "col": 20,
+          "flood_pixel_percentage": 28.89,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c021",
+          "row": 10,
+          "col": 21,
+          "flood_pixel_percentage": 28.92,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c022",
+          "row": 10,
+          "col": 22,
+          "flood_pixel_percentage": 10.97,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r014_c018",
+          "row": 14,
+          "col": 18,
+          "flood_pixel_percentage": 10.85,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r009_c017",
+          "row": 9,
+          "col": 17,
+          "flood_pixel_percentage": 10.15,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r009_c021",
+          "row": 9,
+          "col": 21,
+          "flood_pixel_percentage": 44.95,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r007_c017",
+          "row": 7,
+          "col": 17,
+          "flood_pixel_percentage": 46.5,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c018",
+          "row": 8,
+          "col": 18,
+          "flood_pixel_percentage": 47.32,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r006_c019",
+          "row": 6,
+          "col": 19,
+          "flood_pixel_percentage": 47.38,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r005_c018",
+          "row": 5,
+          "col": 18,
+          "flood_pixel_percentage": 41.44,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r005_c019",
+          "row": 5,
+          "col": 19,
+          "flood_pixel_percentage": 48.95,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r011_c021",
+          "row": 11,
+          "col": 21,
+          "flood_pixel_percentage": 37.25,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r006_c017",
+          "row": 6,
+          "col": 17,
+          "flood_pixel_percentage": 53.44,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c021",
+          "row": 8,
+          "col": 21,
+          "flood_pixel_percentage": 33.49,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r009_c018",
+          "row": 9,
+          "col": 18,
+          "flood_pixel_percentage": 32.45,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r005_c017",
+          "row": 5,
+          "col": 17,
+          "flood_pixel_percentage": 31.58,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r007_c018",
+          "row": 7,
+          "col": 18,
+          "flood_pixel_percentage": 59.89,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r008_c019",
+          "row": 8,
+          "col": 19,
+          "flood_pixel_percentage": 66.55,
+          "valid_pixel_percentage": 100.0
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r007_c019",
+          "row": 7,
+          "col": 19,
+          "flood_pixel_percentage": 62.42,
+          "valid_pixel_percentage": 100.0
+        }
+      ],
+      "preview_patches": [
+        {
+          "patch_id": "pampanga_2024-07-23_r010_c026",
+          "task_id": "B7DI7I3PSSUAKF5QC2GTK4EB"
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r012_c018",
+          "task_id": "U3PPSFNWBIOCA55LXDHOXKGN"
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r007_c013",
+          "task_id": "3RZS6RSGQ7QKZGIELZMNIFOA"
+        },
+        {
+          "patch_id": "pampanga_2024-07-23_r009_c010",
+          "task_id": "ERK5ZXW4BOCJBCCHMSXJAS6A"
+        }
+      ],
+      "status": "valid"
     }
   ]
 }
