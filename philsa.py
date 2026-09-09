@@ -141,6 +141,147 @@ def shapefile_to_ee_featurecollection(
     return ee.FeatureCollection([ee.Feature(ee_geom, {"flood": 1})])
 
 
+# ---------------------------------------------------------------------------
+# Client-side work-region computation (avoids EE payload-size limits)
+# ---------------------------------------------------------------------------
+
+def _utm_epsg_for_lonlat(lon: float, lat: float) -> str:
+    """UTM EPSG zone string from WGS84 lon/lat."""
+    zone = int((lon + 180) / 6) + 1
+    return f"EPSG:{32600 + zone}" if lat >= 0 else f"EPSG:{32700 + zone}"
+
+
+def compute_work_region_local(
+    flood_path: str, basin_key: str
+) -> tuple[ee.FeatureCollection, ee.Geometry]:
+    """
+    Client-side computation of (flood_fc, work_region), compatible with large
+    flood shapefiles that would blow the 10MB EE payload limit if sent to
+    the server for buffer/intersection.
+
+    Returns
+    -------
+    flood_fc : ee.FeatureCollection
+        Single-feature FC (dissolved flood polygon) for mask painting via
+        ``rasterize_flood_mask``.
+    work_region : ee.Geometry
+        Simplified geometry (buffered flood ∩ basin) for S1 clip/filterBounds,
+        MERIT, alignment, and patch-grid generation.
+    """
+    from pyproj import Transformer
+    from shapely.ops import transform as shapely_transform
+    from shapely.ops import unary_union
+
+    # ---- 1. Read flood shapefile ------------------------------------------
+    flood_gdf = gpd.read_file(flood_path)
+    flood_gdf = flood_gdf[~flood_gdf.is_empty & flood_gdf.geometry.notna()]
+    if flood_gdf.empty:
+        raise ValueError(f"{flood_path}: no non-empty geometries.")
+    if flood_gdf.crs is None:
+        raise ValueError(f"{flood_path}: no CRS defined.")
+    flood_gdf = flood_gdf.to_crs("EPSG:4326")
+    if flood_gdf.geometry.iloc[0].is_empty:
+        raise ValueError(f"{flood_path}: empty geometries.")
+
+    # ---- 2. Read basin boundary (client-side, local file) -----------------
+    basin_info = config.BASINS[basin_key]
+    local = basin_info.get("local_path")
+    if not local:
+        raise ValueError(
+            f"compute_work_region_local needs a local_path for basin {basin_key}"
+        )
+    basin_gdf = gpd.read_file(local).to_crs("EPSG:4326")
+    basin_geom_wgs = basin_gdf.dissolve().geometry.iloc[0]
+
+    # ---- 3. Project to UTM (all metric ops below need a metric CRS) --------
+    #    Use the basin centroid to pick the UTM zone (stable, avoids edge
+    #    cases where the clipped flood polygon sits on a UTM boundary).
+    basin_centroid = basin_geom_wgs.centroid
+    epsg = _utm_epsg_for_lonlat(basin_centroid.x, basin_centroid.y)
+    to_utm = Transformer.from_crs("EPSG:4326", epsg, always_xy=True).transform
+    to_wgs = Transformer.from_crs(epsg, "EPSG:4326", always_xy=True).transform
+
+    # ---- 4. Pre-clip flood to basin geometry (the key optimisation) -------
+    #    PhilSA shapefiles are nationwide (34k+ polygons); only a small
+    #    fraction falls inside the target basin.  Spatial-filtering BEFORE
+    #    dissolve/shrink the working set from millions of vertices to the
+    #    few-thousand that actually matter, avoiding the 10 MB EE payload
+    #    limit and keeping downstream geometry ops tractable.
+    flood_clipped = flood_gdf[
+        flood_gdf.intersects(basin_geom_wgs)
+    ].copy()
+    if flood_clipped.empty:
+        raise ValueError(
+            f"{flood_path}: no flood polygons intersect basin {basin_key}"
+        )
+    print(f"  Pre-clip: {len(flood_gdf)} -> {len(flood_clipped)} polygons "
+          f"(basin {basin_key})")
+    # Drop the full-resolution gdf to free memory — we work on the clipped set.
+    del flood_gdf
+
+    # ---- 5. Dissolve clipped flood → mask FeatureCollection ----------------
+    #    The mask is painted server-side at 10 m resolution, so a 50 m
+    #    simplify (5 px) is visually indistinguishable but collapses the
+    #    dissolved MultiPolygon's vertex count and keeps the `.paint()` call
+    #    under EE's 10 MB request payload limit.
+    #    NOTE: the simplify MUST happen in a metric CRS. The dissolved
+    #    geometry is in WGS84 degrees here, so a literal
+    #    `simplify(tolerance=50.0)` would mean 50 deg ≈ 5 500 km and destroy
+    #    the mask; we project to UTM, simplify by true metres, then project
+    #    back to WGS84 for EE.
+    MASK_SIMPLIFY_M = 50.0
+    dissolved_geom = flood_clipped.dissolve().geometry.iloc[0]
+    mask_utm_geom = shapely_transform(to_utm, dissolved_geom)
+    simplified_geom = mask_utm_geom.simplify(
+        tolerance=MASK_SIMPLIFY_M, preserve_topology=True
+    )
+    if not simplified_geom.is_valid:            # GEOS DP can leave tiny slivers
+        simplified_geom = simplified_geom.buffer(0)  # standard OGC repair
+    mask_wgs_geom = shapely_transform(to_wgs, simplified_geom)
+    n_full = sum(len(p.exterior.coords) for p in getattr(dissolved_geom, "geoms", [dissolved_geom]))
+    n_simpl = sum(len(p.exterior.coords) for p in getattr(mask_wgs_geom, "geoms", [mask_wgs_geom]))
+    print(f"  Mask FC simplified: {n_full:,} -> {n_simpl:,} vertices "
+          f"({len(mask_wgs_geom.__geo_interface__) / 1e6:.2f} MB)")
+    flood_fc = ee.FeatureCollection([
+        ee.Feature(
+            ee.Geometry(mask_wgs_geom.__geo_interface__),
+            {"flood": 1},
+        )
+    ])
+
+    # Basin in UTM, ready for the region intersection below.
+    basin_utm_geom = shapely_transform(to_utm, basin_geom_wgs)
+
+    # ---- 6. Per-polygon SIMPLIFY first, then buffer+merge ----------------
+    #    Patches are 2 560 m and the buffer is 2 000 m, so a ~500 m simplify
+    #    tolerance is safely hidden by the buffer and keeps the region compact
+    #    (and well under the EE 10 MB payload limit).
+    #    NOTE: we simplify in WGS84 degrees here (tol_deg), matching the
+    #    pre-existing behaviour; the region's 2 000 m buffer dominates any
+    #    sub-degree wobble, so degree-metric error is insignificant.
+    SIMPLIFY_TOLERANCE_M = 500.0
+    tol_deg = SIMPLIFY_TOLERANCE_M / 111_000.0  # ~500 m ≈ 0.0045 deg
+    simplified_parts = [
+        g.simplify(tolerance=tol_deg, preserve_topology=True)
+        for g in flood_clipped.geometry
+    ]
+    buffered_parts = []
+    for g in simplified_parts:
+        utm_geom = shapely_transform(to_utm, g)
+        buffered_parts.append(utm_geom.buffer(2000))
+    merged = unary_union(buffered_parts)
+    intersected = merged.intersection(basin_utm_geom)
+
+    # ---- 7. Final simplify (patches are 2 560 m) --------------------------
+    simplified = intersected.simplify(tolerance=200, preserve_topology=True)
+
+    # ---- 8. Back to WGS84 → ee.Geometry -----------------------------------
+    simplified_wgs = shapely_transform(to_wgs, simplified)
+    work_region = ee.Geometry(simplified_wgs.__geo_interface__)
+
+    return flood_fc, work_region
+
+
 def rasterize_flood_mask(fc: ee.FeatureCollection, region: ee.Geometry) -> ee.Image:
     """
     Convert flood polygons to a binary raster: 1 = flood, 0 = non-flood,

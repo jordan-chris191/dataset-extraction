@@ -57,18 +57,15 @@ def process_event(event: philsa.FloodEvent, dry_run: bool = False,
             print(f"  PREREQ FAIL: {p}")
         raise RuntimeError("; ".join(prereq["problems"]))
 
-    basin_geom = philsa.get_basin_geometry(event.basin)
-    flood_fc = philsa.shapefile_to_ee_featurecollection(
-        event.philsa_shapefile_path, report=prereq["report"]
+    flood_fc, work_region = philsa.compute_work_region_local(
+        event.philsa_shapefile_path, event.basin
     )
-    flood_geom = flood_fc.geometry()
-    work_region = flood_geom.buffer(2000).intersection(basin_geom, maxError=1)
 
     print("Rasterizing PhilSA mask...")
     flood_mask = philsa.rasterize_flood_mask(flood_fc, work_region)
 
     print("Finding + preprocessing Sentinel-1 pre/post scenes...")
-    sar = sentinel1.get_temporal_sar_stack(work_region, event.flood_date)
+    sar = sentinel1.get_temporal_sar_stack(work_region, event.flood_date, basin=event.basin)
     sar_stack = sar["image"]
     sar_meta = sar["sar_meta"]
 

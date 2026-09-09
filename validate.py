@@ -85,14 +85,10 @@ def validate_one_event(event: philsa.FloodEvent, dry_run: bool = False) -> dict:
         return report
 
     # Region = flood polygon buffered, intersected with basin geometry.
-    basin_geom = philsa.get_basin_geometry(event.basin)
-    flood_fc = philsa.shapefile_to_ee_featurecollection(
-        event.philsa_shapefile_path, report=prereq["report"]
-    )
-    flood_geom = flood_fc.geometry()
-    work_region = (
-        flood_geom.buffer(2000)
-        .intersection(basin_geom, maxError=1)
+    # Computed entirely client-side to avoid EE payload-size limits on
+    # large flood shapefiles (1M+ vertex dissolved geometries).
+    flood_fc, work_region = philsa.compute_work_region_local(
+        event.philsa_shapefile_path, event.basin
     )
 
     # 2-5. Sentinel-1 pre/post + MERIT
@@ -107,7 +103,7 @@ def validate_one_event(event: philsa.FloodEvent, dry_run: bool = False) -> dict:
     # quality_control.classify_event_failure, so the report reflects what
     # actually happened (pre missing, post missing, a code bug, etc).
     try:
-        sar = sentinel1.get_temporal_sar_stack(work_region, event.flood_date)
+        sar = sentinel1.get_temporal_sar_stack(work_region, event.flood_date, basin=event.basin)
     except Exception as exc:  # noqa: BLE001
         failure_cat = quality_control.classify_event_failure(exc)
         report["checks"]["s1"] = {"ok": False, "detail": str(exc)}

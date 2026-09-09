@@ -67,6 +67,7 @@ def find_post_flood_scene(
     region: ee.Geometry,
     flood_date: str,
     window_days: int = config.POST_FLOOD_SEARCH_WINDOW_DAYS,
+    preferred_pass: str | None = None,
 ) -> tuple[ee.Image, dict]:
     """
     Earliest Sentinel-1 scene at-or-after flood_date, within window_days.
@@ -74,6 +75,11 @@ def find_post_flood_scene(
     Rationale for "earliest at-or-after": minimizes floodwater recession
     before observation — the most important scene property for capturing
     the actual event extent. Configurable via window_days.
+
+    If `preferred_pass` is given (e.g. "DESCENDING"), first try only scenes
+    on that pass; if none exist in the window, fall back to the earliest
+    scene on any pass. This keeps relaxed basins on a same-pass pre/post
+    pair when one exists, while not hard-failing when it doesn't.
 
     Returns (image, info) where info records date/pass/relative orbit.
     """
@@ -84,6 +90,14 @@ def find_post_flood_scene(
         .filterDate(start, end)
         .sort("system:time_start")          # ascending -> earliest first
     )
+
+    if preferred_pass is not None:
+        same_pass = coll.filter(
+            ee.Filter.eq("orbitProperties_pass", preferred_pass)
+        )
+        if same_pass.size().getInfo() > 0:
+            coll = same_pass
+
     size = coll.size().getInfo()
     if size == 0:
         raise RuntimeError(
@@ -93,10 +107,12 @@ def find_post_flood_scene(
     img = ee.Image(coll.first())
     # Reason for selection
     info = _scene_info(img)
+    pass_note = f" (preferred_pass={preferred_pass})" if preferred_pass else ""
     info["reason"] = (
         f"Earliest valid S1 IW VV+VH scene at-or-after flood_date "
         f"{flood_date}, within {window_days}-day post window "
-        f"({start.format('YYYY-MM-dd').getInfo()} .. {end.format('YYYY-MM-dd').getInfo()})."
+        f"({start.format('YYYY-MM-dd').getInfo()} .. "
+        f"{end.format('YYYY-MM-dd').getInfo()}){pass_note}."
     )
     return img, info
 
@@ -145,30 +161,48 @@ def find_pre_flood_scene(
 
 
 def match_pre_post_scenes(
-    region: ee.Geometry, flood_date: str
+    region: ee.Geometry, flood_date: str, basin: str = ""
 ) -> tuple[ee.Image, ee.Image, dict, dict]:
     """
     Finds a matched pre/post Sentinel-1 pair for an event, enforcing that
     both scenes share the same orbit pass when
-    config.S1_REQUIRE_MATCHING_ORBIT_PASS is True.
+    config.S1_REQUIRE_MATCHING_ORBIT_PASS is True — UNLESS the basin is
+    listed in config.S1_MATCH_ORBIT_PASS_BY_BASIN as False, in which case
+    pass-matching is relaxed for that event (some basins have no coverage on
+    one pass around the flood; forcing same-pass there yields missing_pre_s1).
 
     Returns (pre_img, post_img, pre_info, post_info).
     """
-    post_img, post_info = find_post_flood_scene(region, flood_date)
+    require_match = bool(config.S1_REQUIRE_MATCHING_ORBIT_PASS)
+    if basin in config.S1_MATCH_ORBIT_PASS_BY_BASIN:
+        require_match = bool(config.S1_MATCH_ORBIT_PASS_BY_BASIN[basin])
 
-    required_pass = None
-    if config.S1_REQUIRE_MATCHING_ORBIT_PASS:
-        # NOTE: _scene_info() stores this under the literal EE property
-        # name "orbitProperties_pass" (via toDictionary), not "orbit_pass".
-        # Previously this line read post_info["orbit_pass"], which raised
-        # a KeyError as soon as a post-flood scene was actually found.
+    if require_match:
+        # Strict path: pick the post scene, then force the pre onto the same
+        # orbit pass so incidence-angle geometry doesn't confound the signal.
+        post_img, post_info = find_post_flood_scene(region, flood_date)
+        # NOTE: _scene_info() stores this under the literal EE property name
+        # "orbitProperties_pass" (via toDictionary), not "orbit_pass".
+        # Previously this line read post_info["orbit_pass"], which raised a
+        # KeyError as soon as a post-flood scene was actually found.
         required_pass = post_info["orbitProperties_pass"]
         post_info["pass_match_required"] = True
+        pre_img, pre_info = find_pre_flood_scene(
+            region, flood_date, required_orbit_pass=required_pass
+        )
+    else:
+        # Relaxed path (basin override): the basin may have zero coverage on
+        # one orbit pass around the event (e.g. Pampanga ASC orbit-142 has no
+        # pre-flood scene). Pick the pre scene first (unconstrained, latest
+        # before flood), then pick the post scene preferring the SAME pass as
+        # the pre when one exists, else the earliest scene of any pass.
+        pre_img, pre_info = find_pre_flood_scene(region, flood_date)
+        post_img, post_info = find_post_flood_scene(
+            region, flood_date, preferred_pass=pre_info.get("orbitProperties_pass")
+        )
+        post_info["pass_match_required"] = False
 
-    pre_img, pre_info = find_pre_flood_scene(
-        region, flood_date, required_orbit_pass=required_pass
-    )
-    pre_info["pass_match_required"] = bool(config.S1_REQUIRE_MATCHING_ORBIT_PASS)
+    pre_info["pass_match_required"] = require_match
 
     return pre_img, post_img, pre_info, post_info
 
@@ -205,7 +239,7 @@ def preprocess_scene(img: ee.Image, region: ee.Geometry, suffix: str) -> ee.Imag
 
 
 def get_temporal_sar_stack(
-    region: ee.Geometry, flood_date: str
+    region: ee.Geometry, flood_date: str, basin: str = ""
 ) -> dict:
     """
     Returns {
@@ -215,7 +249,7 @@ def get_temporal_sar_stack(
       "sar_meta": combined metadata for the log
     }.
     """
-    pre_img, post_img, pre_info, post_info = match_pre_post_scenes(region, flood_date)
+    pre_img, post_img, pre_info, post_info = match_pre_post_scenes(region, flood_date, basin=basin)
 
     pre_processed = preprocess_scene(pre_img, region, "pre")
     post_processed = preprocess_scene(post_img, region, "post")
@@ -232,7 +266,9 @@ def get_temporal_sar_stack(
         "pre_absolute_orbit": pre_info.get("absoluteOrbitNumber"),
         "post_absolute_orbit": post_info.get("absoluteOrbitNumber"),
         "mission": post_info.get("missionID"),
-        "orbit_pass_matched": bool(config.S1_REQUIRE_MATCHING_ORBIT_PASS),
+        # Reflect the per-event decision (may be relaxed per-basin), not the
+        # global config: a relaxed basin reports False, a strict one True.
+        "orbit_pass_matched": bool(pre_info.get("pass_match_required", False)),
         "pre_selection_reason": pre_info["reason"],
         "post_selection_reason": post_info["reason"],
     }

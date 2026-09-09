@@ -80,6 +80,18 @@ S1_INSTRUMENT_MODE = "IW"
 # Set to False to allow either pass (matcher then picks closest-in-time).
 S1_REQUIRE_MATCHING_ORBIT_PASS = True
 
+# Per-basin override for S1_REQUIRE_MATCHING_ORBIT_PASS. Some basins have
+# zero coverage on one orbit pass around certain events (e.g. Pampanga:
+# ASCENDING orbit-142 has no pre-2024-07-23 scene at all — only DESCENDING
+# orbit-32 pre-flood). Forcing same-pass there makes validation fail with
+# "missing_pre_s1" even though a valid DESC orbit-32 pre/post pair exists.
+# When a basin is listed here as False, the matcher relaxes pass-matching for
+# that event and picks the closest-in-time scene on whichever pass has data.
+S1_MATCH_ORBIT_PASS_BY_BASIN = {
+    "pampanga": False,
+    "agusan":   False,
+}
+
 # Temporal selection windows (applied around flood_date):
 #   pre  : look back this many days for the latest valid scene strictly
 #          BEFORE (flood_date - PRE_FLOOD_MIN_GAP_DAYS).
