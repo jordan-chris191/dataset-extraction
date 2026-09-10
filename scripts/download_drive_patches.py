@@ -205,7 +205,18 @@ def wait_for(event: str | None = None, timeout_s: int = 3600) -> list[dict]:
 
 
 def download_completed(event: str | None = None, out_root: str | None = None,
-                       wait: bool = False) -> list[str]:
+                       wait: bool = False, dry_run: bool = False,
+                       force: bool = False) -> dict:
+    """Pull exported patch GeoTIFFs from Drive into <out_root>/<event>/patches/.
+
+    Returns a dict with counts/sets for reporting:
+      {"skipped_local": [...], "found": [...], "missing": [...], "downloaded": [...]}
+    - Only COMPLETED patch tasks are considered (never submits new tasks).
+    - patch_ids are de-duplicated so a retried patch with several COMPLETED
+      tasks is downloaded at most once.
+    - Already-local .tif files are skipped unless force=True (resume-safe).
+    - dry_run=True resolves Drive availability but writes no bytes.
+    """
     out_root = out_root or config.OUTPUT_ROOT
     _ee_initialize()
     if wait:
@@ -214,7 +225,9 @@ def download_completed(event: str | None = None, out_root: str | None = None,
     headers = _drive_headers()
     folders = [config.DRIVE_FOLDER]
     tasks = ee.batch.Task.list()
-    downloaded = []
+
+    seen = set()
+    patch_tasks = []
     for t in tasks:
         st = t.status()
         cfg = t.config or {}
@@ -223,29 +236,43 @@ def download_completed(event: str | None = None, out_root: str | None = None,
             continue
         if event and not desc.startswith(event):
             continue
-        m = PATCH_ID_RE.match(desc)
-        if not m:
+        if not PATCH_ID_RE.match(desc):
             continue
-        patch_id = desc
-        ev = m.group("event")
-        out_dir = os.path.join(out_root, ev, "patches")
-        os.makedirs(out_dir, exist_ok=True)
-        dest = os.path.join(out_dir, f"{patch_id}.tif")
-        found = None
+        if desc in seen:
+            continue
+        seen.add(desc)
+        patch_tasks.append(desc)
+
+    skipped_local, found, missing, downloaded = [], [], [], []
+    for patch_id in patch_tasks:
+        ev = PATCH_ID_RE.match(patch_id).group("event")
+        dest = os.path.join(out_root, ev, "patches", f"{patch_id}.tif")
+        if not force and os.path.exists(dest):
+            skipped_local.append(patch_id)
+            print(f"  = {patch_id}.tif already local — skip")
+            continue
+        hit = None
         for folder in folders:
-            found = _find_drive_file(patch_id, folder, headers)
-            if found:
+            hit = _find_drive_file(patch_id, folder, headers)
+            if hit:
                 break
-        if not found:
+        if not hit:
+            missing.append(patch_id)
             print(f"  !! no Drive file for {patch_id}")
             continue
-        fid, _ = found
-        if _download_file(fid, dest, headers):
+        found.append(patch_id)
+        if dry_run:
+            print(f"  ~ {patch_id}.tif available in Drive (dry-run)")
+            continue
+        out_dir = os.path.dirname(dest)
+        os.makedirs(out_dir, exist_ok=True)
+        if _download_file(hit[0], dest, headers):
+            downloaded.append(patch_id)
             print(f"  + {patch_id}.tif")
-            downloaded.append(dest)
         else:
             print(f"  !! download failed for {patch_id}")
-    return downloaded
+    return {"skipped_local": skipped_local, "found": found,
+            "missing": missing, "downloaded": downloaded}
 
 
 def main() -> None:
@@ -257,6 +284,10 @@ def main() -> None:
     ap.add_argument("--wait", action="store_true", help="Wait for running tasks first")
     ap.add_argument("--out", help="Override OUTPUT_ROOT")
     ap.add_argument("--folder", help="Override Drive folder name (default flood_seg_dataset)")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="Resolve Drive availability but download nothing")
+    ap.add_argument("--force", action="store_true",
+                    help="Re-download tifs that already exist locally")
     args = ap.parse_args()
 
     if args.status:
@@ -270,11 +301,15 @@ def main() -> None:
 
     if args.folder:
         config.DRIVE_FOLDER = args.folder
-    downloaded = download_completed(event=None if args.all else args.event,
-                                    out_root=args.out, wait=args.wait)
-    print(f"\nDownloaded {len(downloaded)} patch(es).")
-    for p in downloaded:
-        print("  " + p)
+    result = download_completed(event=None if args.all else args.event,
+                                out_root=args.out, wait=args.wait,
+                                dry_run=args.dry_run, force=args.force)
+    print("\n------------------------")
+    print(f"  already local : {len(result['skipped_local'])}")
+    print(f"  found in Drive: {len(result['found'])}")
+    print(f"  missing Drive : {len(result['missing'])}")
+    print(f"  downloaded    : {len(result['downloaded'])}")
+    print("------------------------")
 
 
 if __name__ == "__main__":

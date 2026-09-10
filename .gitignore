@@ -8,3 +8,9 @@ __pycache__/
 # One-time downloaded HydroSHEDS/HydroBASINS binaries (only generated
 # data/basins/*.geojson are committed)
 data/hydrosheds/
+
+# Downloaded patch GeoTIFFs (large; kept local). Manifest/metadata CSV is
+# committed; the raster files themselves are regenerated/pulled by the
+# downloader and are intentionally not version-controlled.
+dataset/
+dataset/*/patches/*.tif

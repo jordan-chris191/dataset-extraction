@@ -186,7 +186,7 @@ pre_selection_reason, post_selection_reason
   land-cover conditions are as close as possible to the post-event state —
   this makes the pre/post *difference* attributable to the flood.
 * **Post-flood scene selection** = earliest scene *at-or-after* the event
-  (default window 5 d), to minimize floodwater recession before observation.
+  (default window 14 d), to minimize floodwater recession before observation.
 * **Orbit pass matching** (`S1_REQUIRE_MATCHING_ORBIT_PASS`, default True):
   pre/post scenes share the same ascending/descending pass so incidence-angle
   geometry doesn't confound the temporal difference. Turn off only if it makes
